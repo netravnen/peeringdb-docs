@@ -2,7 +2,8 @@ site/
 .DS_Store
 venv/
 .venv/
-docs/atom.xml
+docs/blog/atom.xml
+docs/release_notes/atom.xml
 docs/CNAME
 __pycache__/
 *.pyc
