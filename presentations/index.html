@@ -1,0 +1,568 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/presentations/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Presentations - PeeringDB Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../extra.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../gov/" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../committee/admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../committee/admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../committee/operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../committee/outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="../committee/product/" class="dropdown-item">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../release_notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../howto/query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#presentations" class="nav-link">Presentations</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#tutorials-and-workshops" class="nav-link">Tutorials and workshops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2026" class="nav-link">2026</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2025" class="nav-link">2025</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2024" class="nav-link">2024</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2023" class="nav-link">2023</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2022" class="nav-link">2022</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2021" class="nav-link">2021</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2020" class="nav-link">2020</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2019" class="nav-link">2019</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2018" class="nav-link">2018</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2017" class="nav-link">2017</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2016" class="nav-link">2016</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2015" class="nav-link">2015</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="presentations">Presentations</h1>
+<h2 id="tutorials-and-workshops">Tutorials and workshops</h2>
+<p>Hands-on tutorial and workshop materials, as opposed to the conference update talks listed below.</p>
+<ul>
+<li><a href="../presentation/20241105_PeeringAsia6_Arnold_Nipper.pdf">PDB 101 in 20 Minutes</a> at <a href="https://6.peeringasia.org/agenda/tutorial">Peering Asia 6.0</a> - November 5, 2024 - Arnold Nipper</li>
+<li><a href="../presentation/20220225-Apricot-1-2-GUI-API-with-exercises.pdf">PeeringDB Tutorial, learning the GUI and the API</a> at <a href="https://2022.apricot.net/program/schedule-tutorial/#/day/5/introduction-to-peeringdb-a-tutorial-part-1">APRICOT 2022</a> - February 25, 2022 - Arnold Nipper</li>
+<li><a href="../presentation/20210506-Teraco_Tech_Day.pdf">The How-to Guide</a> at <a href="https://www.teraco.co.za/events/virtual-tech-days/?fbclid=IwAR310Y84fDzXnZOcfXWxnogcgkDTrWaTwfM4u0U8c5wkFPd5ihNaHuNWjzk">Teraco Virtual Tech Day with PeeringDB</a> - May 6, 2021 - Ben Ryall</li>
+<li><a href="../presentation/20200220-1-2-GUI-API-APRICOT2020-Arnold-Nipper.pdf">PeeringDB Tutorial, learning the GUI and the API</a> at <a href="https://2020.apricot.net/program/schedule/#/day/9">APRICOT 2020</a>, Melbourne, AU - February 20, 2020 - Arnold Nipper</li>
+<li><a href="../presentation/20191110-1-GUI-DENOG11-Arnold-Nipper.pdf">How is PeeringDB organised?</a> and <a href="../presentation/20191110-2-API-DENOG11-Arnold-Nipper.pdf">The PeeringDB API</a> at <a href="https://www.denog.de/de/meetings/denog11/workshops.html">DENOG11</a>, Hamburg, DE - November 10, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190820_PeeringDB_Workshop_1-2_AfPIF_2019.pdf">PeeringDB Workshop</a> at <a href="https://www.afpif.org/afpif-10/">AfPIF-10</a>, Balaclava, MV - August 20, 2019 - Arnold Nipper (<a href="https://livestream.com/internetsociety/afpif2019/videos/195303661">video</a> starts at 14:00)</li>
+<li><a href="../presentation/20190227-peeringdb-workshop-1-intro.pdf">Part 1: Intro</a>, <a href="../presentation/20190227-peeringdb-workshop-2-main.pdf">Part 2: Main</a>, <a href="../presentation/20190227-peeringdb-workshop-3-api.pdf">Part 3: API</a> at <a href="https://2019.apricot.net/program/schedule/#/day/10/peeringdb-tutorial">APRICOT 2019</a>, Daejeon, KR - February 27, 2018 - Arnold Nipper (<a href="https://www.youtube.com/watch?v=cygDlOqs9tI">video</a>)</li>
+</ul>
+<h2 id="2026">2026</h2>
+<ul>
+<li><a href="../presentation/20260421_ITNOG10_Morina_Livio.pdf">PeeringDB Updates (YoY) &amp; Engaging with the Product Committee</a> at <a href="https://www.itnog.it/itnog10/">ITNOG10</a>, Bologna, IT - April 21, 2025 - Livio Morina</li>
+<li><a href="../presentation/20260420_DX_DIF_WS_ZANOG_2026_PDB-Intro_Nipper_Arnold.pdf">Introduction to PeeringDB</a> at DE-CIX/DIF Workshop on Building Sustainable IXPs, Irene, ZA - April 20, 2026 - Arnold Nipper</li>
+<li><a href="../presentation/20260414_GPF2026_Morina_Livio.pdf">PeeringDB Updates (YoY) &amp; Engaging with the Product Committee</a> at <a href="https://globalpeeringforum.org/gpf-2026-agenda/">GPF 2026</a>, Panama City, PA - April 14, 2025 - Livio Morina</li>
+<li><a href="../presentation/20260324_PeeringDays_Arnold_Nipper.pdf">Engaging with the Product Committee</a> at <a href="https://peeringdays.eu/programme/">Peering Days 2026</a>, Bologna, IT - March 24, 2026 - Arnold Nipper</li>
+<li><a href="../presentation/20260211_APRICOT2026_Arnold_Nipper.pdf">Authenticating Networks With RPKI RSC</a> at <a href="https://2026.apricot.net/programme/programme#/day/8/">APRICOT 2026</a>, Jakarta, ID - February 11, 2025 - Yolandi Cloete and Arnold Nipper</li>
+<li><a href="../presentation/20260205_ANIX_Meeting_2026_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://anix2026.anix.al/">ANIX Meeting 2026</a>, Tirana, AL - February 6, 2025 - Livio Morina</li>
+</ul>
+<h2 id="2025">2025</h2>
+<ul>
+<li><a href="../presentation/20251212_GRNOG19_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://grnog.indico.nogalliance.org/event/12/">GRNOG 19</a>, Athens, GR - December 12, 2025 - Livio Morina</li>
+<li><a href="../presentation/20251022_RIPE_91_Leo_Vegoda.pdf">PeeringDB Updates</a> at <a href="https://ripe91.ripe.net/programme/meeting-plan/sessions/27/">RIPE 91</a>, Bucharest, RO - October 22, 2025 - Leo Vegoda</li>
+<li><a href="../presentation/20250924_BalticNOG1_Livio_Morina.pdf">What's new on PeeringDB?</a> at <a href="https://events.balticnog.org/event/1/timetable/#all.detailed">BalticNOG 2025</a>, Vilnius, LT - September 24, 2025 - Livio Morina</li>
+<li><a href="../presentation/20250918_RONOG10_Arnold_Nipper.pdf">What’s New and What’s Next</a> at <a href="https://www.ronog.ro/">RONOG 10</a>, Bucharest, RO - September 18, 2025 - Arnold Nipper</li>
+<li><a href="../presentation/20250917_EPF2025_Livio_Morina.pdf">What's new on PeeringDB?</a> at <a href="https://peering-forum.eu/">EPF 2025</a>, Bucharest, RO - September 17, 2025 - Livio Morina</li>
+<li><a href="../presentation/20250903_AusNOG2025_Alex_Corso.pdf">PeeringDB Update</a> at <a href="https://www.ausnog.net/events/ausnog-2025/">AusNOG 2025</a>, Melbourne, AU - September 3, 2025 - Alexandre Corso</li>
+<li><a href="../presentation/20250821_AfPIF2025_Obinna_Adumike.pdf">PeeringDB Update</a> at <a href="https://www.afpif.org/afpif2025/">AfPIF 2025</a>, Lagos, NG - August 21, 2025 - Obinna Adumike</li>
+<li><a href="../presentation/20250707_NetUK2_Elisa_Peirano.pdf">PeeringDB Update</a> at <a href="https://indico.netuk.org/event/2/timetable/#20250708.detailed">NetUK2</a>, London, UK - July 7, 2025 - Elisa Peirano</li>
+<li><a href="../presentation/20250624_Swinog40_Arnold_Nipper.pdf">What’s New and What’s Next</a> at <a href="https://www.swinog.ch/meetings/swinog40/">SwiNOG #40</a>, Berne, CH - June 24, 2025 - Arnold Nipper</li>
+<li><a href="../presentation/20250617_WAPF2025_Obinna_Adumike.pdf">PeeringDB Update</a> at <a href="https://www.internetsociety.org/events/west-africa-peering-forum-wapf/2025/">West Africa Peering Forum 2025</a>, Dakar, SN - June 17, 2025 - Obinna Adumike</li>
+<li><a href="../presentation/20250520_ITNOG9_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://www.itnog.it/itnog9/">ITNOG9</a>, Bologna, IT - May 20, 2025 - Livio Morina</li>
+<li><a href="../presentation/20250515_RIPE90_2025_Leo_Vegoda.pdf">PeeringDB Updates</a> at <a href="https://ripe90.ripe.net/programme/meeting-plan/connect-wg/">RIPE 90</a>, Lisbon, PT - May 15, 2025 - Leo Vegoda</li>
+<li><a href="../presentation/20250505_LAC_PF_Livio_Morina_Elisa_Peirano.pdf">What's new on PeeringDB?</a> at <a href="https://peeringforum.lat/">LAC Peering Forum 2025</a>, São Paulo, BR - May 5, 2025 - Livio Morina and Elisa Peirano</li>
+<li><a href="../presentation/20250505_LAC_PF_Julimar_Mendes.pdf">IP block renumbering of an IXP in PeeringDB</a> at <a href="https://peeringforum.lat/">LAC Peering Forum 2025</a>, São Paulo, BR - May 5, 2025 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20250415_GPF_2025_Greg_Hankins.pdf">What’s New and What’s Next</a> at <a href="https://globalpeeringforum.org/gpf-agenda-2025/">GPF 2025</a>, Denver, CO, US - April 15, 2025 - Greg Hankins</li>
+<li><a href="../presentation/20250407_SEE13_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://www.ripe.net/meetings/regional-meetings/see/see-13/">SEE 13</a>, Sofia, BG - April 7, 2025 - Livio Morina</li>
+<li><a href="../presentation/20250327_PeeringDays2025_Yolandi_Cloete.pdf">What’s New and What’s Next</a> at <a href="https://events.dknog.dk/event/32/">Peering Days 2025</a>, Split, HR - March 27, 2025 - Yolandi Cloete</li>
+<li><a href="../presentation/20250307_DKNOG15_2025_Paul_Hoogsteder.pdf">PeeringDB Update</a> at <a href="https://events.dknog.dk/event/32/">DKNOG15</a>, Copenhagen, DK - March 7, 2025 - Paul Hoogsteder</li>
+<li><a href="../presentation/20250124_Ethiopia_Peering_Day_Ben_Ryall.pdf">Introduction to PeeringDB</a> at <a href="https://www.internetsociety.org/events/ethiopia-peering-day/">Ethiopia Peering Day</a>, Addis Ababa, ET - January 24, 2025 - Ben Ryall</li>
+</ul>
+<h2 id="2024">2024</h2>
+<ul>
+<li><a href="../presentation/20241121_LINX123_Lynsey_Buckingham.pdf">PeeringDB Update</a> at <a href="https://www.linx.net/events/linx123-2/">LINX123</a>, London, UK - November 21, 2024 - Lynsey Buckingham</li>
+<li><a href="../presentation/20241119_RSNOG10_Livio_Morina.pdf">What's new on PeeringDB?</a> at <a href="https://rsnog.rs/events/tenth-rsnog-conference/?lang=en">RSNOG 10</a>, Belgrade, RS - November 19, 2024 - Livio Morina</li>
+<li><a href="../presentation/20241114_ZAPF_2024_Obinna_Adumike.pdf">What's new on PeeringDB?</a> at <a href="https://www.zapf.africa/">8th South African Peering Forum</a>, Cape Town, ZA - November 14, 2024 - Obinna Adumike</li>
+<li><a href="../presentation/20241106_nog.fi_meeting_2024.11_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://nog.fi/event/12/">nog.fi meeting 2024.11</a>, Helsinki, FI - November 6, 2024 - Livio Morina</li>
+<li><a href="../presentation/20241031_RIPE89_Connect_WG_Leo_Vegoda.pdf">PeeringDB Update</a> at <a href="https://ripe89.ripe.net/">RIPE 89</a>, Prague, CZ - October 31, 2024 - Leo Vegoda</li>
+<li><a href="../presentation/20241023_NgNOG_2024_Obinna_Adumike.pdf">What's new on PeeringDB?</a> at <a href="https://nog.ng/">NgNOG 2024</a>, Lagos, NG - October 23, 2024 - Obinna Adumike</li>
+<li><a href="../presentation/20241015_Netnod_Tech_Meeting_2024_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://www.netnod.se/event/netnod-tech-meeting-2024">Netnod Tech Meeting 2024</a>, Stockhold, SE - October 15, 2024 - Livio Morina</li>
+<li><a href="../presentation/20241002_RONOG9_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://www.ronog.ro/">RONOG 9</a>, Bucharest, RO - October 2, 2024 - Livio Morina</li>
+<li><a href="../presentation/20240905_AusNOG_Arnold_Nipper.pdf">PeeringDB in Five Minutes</a> at <a href="https://www.ausnog.net/events/ausnog-2024/program">AusNOG 2024</a>, Sydney, AU - September 5, 2024 - Arnold Nipper</li>
+<li><a href="../presentation/20240820_AfPIF_2024_Ben_Ryall.pdf">What's new on PeeringDB?</a> at <a href="https://www.afpif.org/afpif2024/">AfPIF 2024</a>, Kinsahsa, CD - August 20, 2024 - Ben Ryall</li>
+<li><a href="../presentation/20240710_PhNOG_Arnold_Nipper.pdf">PeeringDB Introduction &amp; Update</a> at <a href="https://bit.ly/PhNOG2024Week">PhNOG 2024 Week</a>, Makati City, PH - July 10, 2024 - Arnold Nipper</li>
+<li><a href="../presentation/20240708_NetUK-1_Paul_Hoogsteder.pdf">PeeringDB Update</a> at <a href="https://www.netuk.org/netuk1/">NetUK 1</a>, London, UK - July 8, 2024 - Paul Hoogsteder</li>
+<li><a href="../presentation/20240626_WAPF_2024_Ben_Ryall.pdf">What's new on PeeringDB?</a> at <a href="https://www.internetsociety.org/events/west-africa-peering-forum-wapf/2024/">WAPF 2024</a>, Abidjan, CI - June 26, 2024 - Ben Ryall</li>
+<li><a href="../presentation/20240614_MWPS2024_Martin_Hannigan.pdf">PeeringDB Update</a> at <a href="https://www.eventcreate.com/e/mwps2024">MWPS 2024</a>, Kansas City, MO, US - June 14, 2024 - Martin Hannigan</li>
+<li><a href="../presentation/20240528_LINX122_Ben_Ryall.pdf">PeeringDB Update</a> at <a href="https://www.linx.net/events/linx122/">LINX122</a>, London, UK - May 28, 2024 - Ben Ryall</li>
+<li><a href="../presentation/20240523_RIPE88_Paul_Hoogsteder.pdf">PeeringDB Update</a> at <a href="https://ripe88.ripe.net/">RIPE 88</a>, Kraków, PL - May 23, 2024 - Paul Hoogsteder</li>
+<li><a href="../presentation/20240507_ITNOG9_Morina_Livio_rev2.pdf">What's new on PeeringDB?</a> at <a href="https://www.itnog.it/itnog8/">ITNOG8</a>, Bologna, IT - May 7, 2024 - Livio Morina</li>
+<li><a href="../presentation/20240429_SANOG41_Arnold_Nipper.pdf">PeeringDB Introduction &amp; Update</a> at <a href="https://www.sanog.org/sanog41/program.html">SANOG 41</a>, Mumbai, IN - April 29, 2024 - Arnold Nipper</li>
+<li><a href="../presentation/20240422_SEE12_Morina_Livio.pdf">What's new on PeeringDB?</a> at <a href="https://www.ripe.net/membership/meetings/regional-meetings/see/see-12/">SEE 12</a>, Athens, GR - April 22, 2024 - Livio Morina</li>
+<li><a href="../presentation/20240415_GPF_2024_Chris_Malayter.pdf">PeeringDB Update</a> at <a href="http://globalpeeringforum.org/agenda/">GPF 2024</a>, San Juan, PR, US - April 15, 2024 - Chris Malayter</li>
+<li><a href="../presentation/20240308_DKNOG14_Chriztoffer_Hansen.pdf">PeeringDB Update</a> at <a href="https://events.dknog.dk/event/25/">DKNOG14</a>, Copenhagen, DK - March 8, 2024 - Chriztoffer Hansen</li>
+<li><a href="../presentation/20240307_PeeringDays_Ben_Ryall.pdf">PeeringDB Update</a> at <a href="https://peeringdays.eu/">Peering Days 2024</a>, Krakow, PL - March 7, 2024 - Ben Ryall</li>
+<li><a href="../presentation/20240213_NANOG90_Martin_Hannigan.pdf">PeeringDB Update</a> at <a href="https://www.nanog.org/events/nanog-90/agenda/">NANOG 90</a>, Charlotte, NC, US - February 12, 2024 - Martin Hannigan</li>
+</ul>
+<h2 id="2023">2023</h2>
+<ul>
+<li><a href="../presentation/20231130_RIPE87_Leo_Vegoda.pdf">PeeringDB Update</a> at <a href="https://ripe87.ripe.net/programme/meeting-plan/connect-wg/">RIPE 87</a>, Rome, IT - November 30, 2023 - Leo Vegoda</li>
+<li><a href="../presentation/20231115_SALOTTO2023_Livio_Morina.pdf">What's new on PeeringDB?</a> at <a href="https://salotto.mix-it.net/en/">MIX Salotto 2023</a>, Milan, IT - November 15, 2023 - Livio Morina</li>
+<li><a href="../presentation/20231109_RSNOG9_Livio_Morina.pdf">What is PeeringDB? Why is it important for network operators?</a> at <a href="https://rsnog.rs/events/ninth-rsnog-conference/?lang=en">RSNOG9</a>, Belgrade, RS - November 9, 2023 - Livio Morina</li>
+<li><a href="../presentation/20231025_GRNOG15_Livio_Morina.pdf">What’s new on PeeringDB?</a> at <a href="https://grnog.indico.nogalliance.org/event/8/">GRNOG 15</a>, Athens, GR - October 25, 2023 - Livio Morina</li>
+<li><a href="../presentation/20231006_FRNOG38_Livio_Morina.pdf">What’s new on PeeringDB?</a> at <a href="https://www.frnog.org/?page=meetings&amp;lang=en">FRnOG 38</a>, Paris, FR - October 6, 2023 - Livio Morina</li>
+<li><a href="../presentation/20230621_SwiNOG38_Arnold_Nipper.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://www.swinog.ch/meetings/swinog38/">SwiNOG#38</a>, Berne, CH - June 21, 2023 - Arnold Nipper</li>
+<li><a href="../presentation/20230525_RIPE86_Leo_Vegoda.pdf">PeeringDB Update</a> at <a href="https://ripe86.ripe.net/programme/meeting-plan/connect-wg/">RIPE 86</a>, Rotterdam, NL - May 25, 2023 - Leo Vegoda</li>
+<li><a href="../presentation/20230510_ITNOG7_Arnold_Nipper.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://www.itnog.it/itnog7/">ITNOG7</a>, Bologna, IT - May 9, 2023 - Arnold Nipper</li>
+<li><a href="../presentation/20230424_38_Euro-IX_Arnold_Nipper.pdf">What’s new on PeeringDB?</a> at the <a href="https://www.euro-ix.net/en/events/fora/38th-euro-ix-forum/program/">38th Euro-IX Forum</a>, Cluj-Napoca, RO - April 24, 2023 - Arnold Nipper</li>
+<li><a href="../presentation/20230404_SEE11_Arnold_Nipper.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://www.ripe.net/participate/meetings/regional-meetings/see/see-11">SEE 11</a>, Split, HR - April 5, 2023 - Arnold Nipper</li>
+<li><a href="../presentation/20230402_GPF2023_Matt_Griswold.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://globalpeeringforum.org/agenda/">GPF 2023</a>, Coronado, CA, US - April 4, 2023 - Matt Griswold</li>
+<li><a href="../presentation/20230330_Peering_Days_2023_Arnold_Nipper.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://peeringdays.eu/">Peering Days 2023</a>, Sofia, BG - March 30, 2023 - Arnold Nipper</li>
+<li><a href="../presentation/20230309_DKNOG13_Arnold_Nipper.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://events.dknog.dk/event/21/">DKNOG13</a>, Copenhagen, DK - March 10, 2023 - Arnold Nipper</li>
+</ul>
+<h2 id="2022">2022</h2>
+<ul>
+<li><a href="../presentation/AOPF_2022_Luanda-peeringdb-20221208.pdf">PeeringDB</a> at <a href="https://events.ao.nog.community/event/1/">AOPF/AONOG 2022</a> - December 8, 2022 - Darwin Da Costa</li>
+<li><a href="../presentation/20221115_DENOG14_Arnold.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://www.denog.de/de/meetings/denog14/agenda.html">DENOG14</a>, Hamburg, DE - November 15, 2022 - Arnold Nipper</li>
+<li><a href="../presentation/20221026_RIPE85_Connect-WG_Arnold.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://ripe85.ripe.net/programme/meeting-plan/connect-wg/">RIPE 85</a>, Belgrade, RS - October 26, 2022 - Arnold Nipper</li>
+<li><a href="../presentation/20221025-ngPIF.pdf">PeeringDB Operations &amp; Product Update</a> at <a href="https://pif.ng/agenda/">ngPIF 2022</a>, Lagos, NG - October 25, 2022 - Ben Ryall</li>
+<li><a href="../presentation/WTR_POP-PI_2022_Teresina-peeringdb-20221020.pdf">PeeringDB</a> at <a href="https://wtr.rnp.br/pop-pi/programacao">WTR POP-PI 2022</a> - October 20, 2022 - Julimar Lunguinho Mendes (<a href="https://youtu.be/Y0uoW7YSlQA?t=6628">video</a>)</li>
+<li><a href="../presentation/20221019_Gilmore_Lightning_Talk_Peeringdb_v1.pdf">PeeringDB Call for Committee Members</a> at <a href="https://www.nanog.org/events/nanog-86/agenda/">NANOG 86</a>, Hollywood, CA, US - October 19, 2022 - Patrick Gilmore</li>
+<li><a href="../presentation/20221011-37th-Euro-IX-Greg.pdf">PeeringDB Operations &amp; Product Update</a> at the <a href="https://www.euro-ix.net/en/events/fora/37th-euro-ix-forum/">37th Euro-IX Forum</a>, Edinburgh, UK - October 11, 2022 - Greg Hankins</li>
+<li><a href="../presentation/20220912_EPF15_Arnold.pdf">PeeringDB Update</a> at <a href="https://peering-forum.eu/2022/">EPF 2022</a>, Rome, IT - September 12, 2022 - Arnold Nipper</li>
+<li><a href="../presentation/20220823_AfPIF_Ben.pdf">PeeringDB Update</a> at <a href="https://www.afpif.org/afpif2022/">AfPIF 2022</a>, Kigali, RW - August 23, 2022 - Ben Ryall</li>
+<li><a href="../presentation/20220512_GPF_2022_Malayter.pdf">PeeringDB Update</a> at <a href="https://www.globalpeeringforum.org/">GPF 2022</a>, Washington, DC, US - May 12, 2022 - Chris Malayter</li>
+<li><a href="../presentation/20220203-Teraco-Tech-Day.pdf">2021 Status Update</a> at <a href="https://www.teraco.co.za/events/virtual-tech-days/">Virtual Tech Day with Euro-IX PeeringToolbox</a> - February 3, 2022 - Leo Vegoda</li>
+</ul>
+<h2 id="2021">2021</h2>
+<ul>
+<li><a href="../presentation/20211214-gna-g-rwg-meeting.pdf">Introduction to PeeringDB</a> at <a href="https://www.gna-g.net/join-working-group/gna-g-routing-wg/">GNA-G Routing WG</a> - December 14, 2021 - Arnold Nipper</li>
+<li><a href="../presentation/Semana_Capacitacao_2021_Sao_Paulo-peeringdb-20211001.pdf">PeeringDB Update</a> at <a href="https://semanacap.bcp.nic.br/3-online/">Semana de Capacitação On-line 3</a> - October 1, 2021 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/WTR_POP-MA_2021_Sao_Luis-peeringdb-20210930.pdf">PeeringDB Update</a> at <a href="https://wtr.rnp.br/pop-ma/programacao">WTR PoP-MA</a> - September 30, 2021 - Julimar Lunguinho Mendes</li>
+</ul>
+<h2 id="2020">2020</h2>
+<ul>
+<li><a href="../presentation/IX_Forum_14_Sao_Paulo-peeringdb-20201204-V3.pdf">PeeringDB</a> at <a href="https://forum.ix.br/#schedule">IX Fórum 14</a> - December 4, 2020 - Julimar Lunguinho Mendes (<a href="https://www.youtube.com/watch?v=9EIBgF6okWs">video</a>)</li>
+<li><a href="../presentation/20201002-ANUIES-PeeringDB-Intro-Spanish.pdf">Introducción a PeeringDB</a> at <a href="http://anuies.symposium.events/54606/programme/seguridad-en-el-ruteo_-manrs-para-operadores-de-red-de-universidades.html">Seguridad en el Ruteo: MANRS para Operadores de Red de Universidades</a> - October 2, 2020 - Diego Dominguez</li>
+<li><a href="../presentation/20200817-dtf-implementation.pdf">Data Ownership Policy Implementation Presentation</a> - August 17, 2020 - Filiz Yilmaz, Steve McManus, Arnold Nipper (<a href="https://youtu.be/mtT_HojbIPs">video</a>)</li>
+<li><a href="../presentation/20200417-DataTF-AnnualMtg-Update-Filiz-Yilmaz.pdf">PeeringDB Data Ownership Task Force</a> at <a href="https://www.facebook.com/events/580338329488711/">PeeringDB Annual Meeting 2020</a> - April 17, 2020 - Filiz Yilmaz</li>
+<li><a href="../presentation/ABRINT_na_Estrada_Campo_Grande-peeringdb-20200310.pdf">PeeringDB</a> at <a href="https://www.sympla.com.br/abrint-na-estrada-campo-grande---ms__769250">ABRINT na Estrada Campo Grande</a>, Campo Grande, BR - March 10, 2020 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20200226-PhNOG-Arnold-Nipper.pdf">PeeringDB Update</a> at <a href="http://phnog.com/phnog-2020-manila/">PhNOG 2020</a>, Manila, PH - February 26, 2020 - Arnold Nipper</li>
+<li><a href="../presentation/20200219-Apricot-Arnold-Nipper.pdf">PeeringDB Update</a> at <a href="https://2020.apricot.net/program/schedule/#/day/8">APRICOT 2020</a>, Melbourne, AU - February 19, 2020 - Arnold Nipper</li>
+</ul>
+<h2 id="2019">2019</h2>
+<ul>
+<li><a href="../presentation/20191205-MoscowPF-Filiz-Yilmaz2.pdf">PeeringDB Update</a> (English)/<a href="../presentation/20191205-MoscowPF-Filiz-Yilmaz2-rus.pdf">Новости от PeeringDB</a> (Pусский) at <a href="https://peering-forum.ru/en">MSK-IX Peering Forum 2019</a>, Moscow, RU - December 5, 2019 - Filiz Yilmaz</li>
+<li><a href="../presentation/mum-foz-peeringdb.20191129.pdf">PeeringDB - Como Está a Adoção no Brasil</a> at <a href="https://mum.mikrotik.com/2019/BR/agenda">MUM in Brazil</a>, Foz do Iguaçu, BR - November 29, 2019 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20191128-cabase-peeringdb-intro-spanish.pdf">PeeringDB Para Que Sirve?</a> at <a href="https://www.eventbrite.com.ar/e/xii-encuentro-nacional-de-tecnicos-28-y-29-de-noviembre-tickets-74689228493">XII Encuentro Nacional de Técnicos</a>, Salta, AR - November 28, 2019 - Hernan Moguilevsky</li>
+<li><a href="../presentation/20191112-DENOG11-Stefan_Funke.pdf">PeeringDB Update: A Look Into PeeringDB's Data for AT/CH/DE/LU and the Latest Changes</a> at <a href="https://www.denog.de/de/meetings/denog11/zeitplan.html">DENOG11</a>, Hamburg, DE - November 12, 2019 - Stefan Funke</li>
+<li><a href="../presentation/20191107-PeeringAsia3-Arnold-Nipper-V2.pdf">PeeringDB Update</a> at <a href="http://peeringasia.com/">Peering Asia 3.0</a>, Kuala Lumpur, MY - November 7, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20191105-ATNOG2019-2-Stefan_Funke.pdf">PeeringDB Update</a> at <a href="https://atnog.at/">ATNOG 2019/2</a>, Vienna, AT - November 5, 2019 - Stefan Funke</li>
+<li><a href="../presentation/20191105-JBIX-Peering-Forum-Arnold-Nipper-V2.pdf">Introduction to PeeringDB</a> at <a href="http://pf.jbix.my/">JBIX Peering Forum 2019</a>, Kuala Lumpur, MY - November 5, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/ngnog-pdb.pdf">Introduction to PeeringDB</a> at <a href="https://nog.ng/">ngNOG 2019</a>, Lagos, NG - October 30, 2019 - Ben Ryall</li>
+<li><a href="../presentation/ix-forum-florianopolis-peeringdb.20191025.pdf">Cadastro para participantes do IX.br</a> at <a href="https://regional.forum.ix.br/38-SC/">IX Fórum Regional</a>, Florianópolis, BR - October 25, 2019 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/euroix-201910-euroix35-oauth-for-ixps.pdf">OAuth for IXP Operators</a> at the <a href="https://www.euro-ix.net/en/events/fora/35th-euro-ix-forum/">35th Euro-IX Forum</a>, Zaandam, NL - October 21, 2019 - Barry O'Donovan</li>
+<li><a href="../presentation/20191021-API-EuroIX35-Arnold-Nipper.pdf">The PeeringDB API</a> at the <a href="https://www.euro-ix.net/en/events/fora/35th-euro-ix-forum/">35th Euro-IX Forum</a>, Zaandam, NL - October 21, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20191001-RONOG6-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="https://www.ronog.ro/">RONOG 6</a>, Bucharest, RO - October 1, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/PeeringDBUpdate_EPF2019.pdf">PeeringDB Update</a> at <a href="https://www.peering-forum.eu/agenda?year=2019">EPF14</a>, Tallinn, EE - September 18, 2019 - Filiz Yilmaz</li>
+<li><a href="../presentation/ix-forum-natal-peeringdb.20190906.pdf">Cadastro para participantes do IX.br</a> at <a href="https://regional.forum.ix.br/36-RN/">IX Fórum Regional</a>, Natal, BR - September 6, 2019 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20190828-SAFNOG5-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="http://www.safnog.org/">SAFNOG-5</a>, Johannesburg, ZA - August 28, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190822-AfPIF2019-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="https://www.afpif.org/afpif-10/">AfPIF-10</a>, Balaclava, MV - August 22, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190814-MexNOG2-peeringdb-intro-Spanish.pdf">Introducción a PeeringDB</a> at <a href="http://www.mexnog.org.mx/">MexNOG 2019</a>, Mexico City, MX - August 14, 2019 - Diego Dominguez</li>
+<li><a href="../presentation/20190716-ATNOG2019-1-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="https://atnog.at/">ATNOG 2019/1</a>, Salzburg, AT - July 16, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190701-INNOG2-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="https://www.innog.net/innog-2/program/conference/">INNOG 2</a>, New Delhi, IN - July 1, 2019 - Arnold Nipper (<a href="https://www.youtube.com/watch?v=BsSkPIQEtz8">video</a>)</li>
+<li><a href="../presentation/ix-forum-saopaulo-peeringdb.20190610.pdf">Cadastro para participantes do IX.br</a> at <a href="https://regional.forum.ix.br/31-SP/">IX Fórum Regional</a>, São Paulo, BR - June 10, 2019 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20190603-ENOG16-Arnold-Nipper.pdf">News from PeeringDB</a> at <a href="https://www.enog.org/enog-16/">ENOG 16</a>, Tbilisi, GE - June 3, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190527-NONOG3-Arnold-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.nonog.net/nonog-3/">NONOG-3</a>, Oslo, NO - May 27, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190514-SINOG6-Arnold-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.sinog.si/sinog/sinog6/en/">SINOG 6.0</a>, Ljubljana, SI - May 14, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190507-BKNIX-Peeringforum-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="https://peeringforum.bknix.co.th/2019/">BKNIX Peering Forum and ThaiNOG Day 2019</a>, Bangkok, TH - May 7, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/LAC-Peering-Forum-2019-Punta_Cana-PeeringDB.20190506.pdf">Use in Latin America</a> at <a href="http://peeringforum.lat/">Peering Forum LAC</a>, Punta Cana, DR - May 6, 2019 - Julimar Lunguinho Mendes and Carlos Martinez Cagnazzo</li>
+<li><a href="../presentation/ix-forum-campogrande-peeringdb.20190416.pdf">Cadastro para participantes do IX.br</a> at <a href="https://regional.forum.ix.br/29-MS/">IX Fórum Regional</a>, Campo Grande, BR - April 26, 2019 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20190419-TelecomDay-Arnold-Nipper.pdf">Introduction to PeeringDB</a> at <a href="http://telecomday.ru/en/programm/">Telecom Day</a>, St. Petersburg, RU - April 19, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190417-SEE8-Arnold-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.ripe.net/participate/meetings/regional-meetings/see/see-8">SEE 8</a>, Sarajevo, BH - April 17, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190405-PeeringDB-Update-Curso-IPv6.pdf">PeeringDB Update</a> at <a href="https://cursoseventos.nic.br/curso/curso-avancado-ipv6/">Curso Avançado de IPv6</a>, São Paulo, BR - April 5, 2019 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20190404-BCIX-1-Roundtable-Stefan-Funke.pdf">PeeringDB Update</a> at <a href="https://www.facebook.com/events/2386787348000284/">BCIX Round Table April 2019</a>, Berlin, DE - April 4, 2019 - Stefan Funke</li>
+<li><a href="../presentation/20190403-MENOG19-Arnold-Nipper-V2.pdf">PeeringDB Update</a> at <a href="https://www.menog.org/meetings/menog-19/">MENOG 19</a>, Beirut, LB - April 3, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190315-DKNOG9-Arnold-Nipper-V2.pdf">PeeringDB Update</a> at <a href="https://events.dknog.dk/event/4/contributions/">DKNOG9</a>, Copenhagen, DK - March 15, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190312-PeeringDays2019-Arnold-Nipper.pdf">PeeringDB Update</a> at <a href="https://peeringdays.eu/programme/">Peering Days 2019</a>, Zagreb, CR - March 12, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190306-PhNOG2019-Arnold-Nipper-V2.pdf">PeeringDB Update</a> at <a href="http://phnog.com/phnog-2019-cebu-details/">PhNOG 2019</a>, Cebu, PH - March 8, 2019 - Arnold Nipper</li>
+<li><a href="../presentation/20190301-HKNOG70-Arnold-Nipper-V2.pdf">PeeringDB Update</a> at <a href="https://hknog.net/hknog-7-0/">HKNOG 7.0</a>, Hong Kong, HK - March 1, 2019 - Arnold Nipper</li>
+</ul>
+<h2 id="2018">2018</h2>
+<ul>
+<li><a href="../presentation/20181123-MSK-IX-Peering-Forum-2018-Stanic.pdf">PeeringDB Update</a> at <a href="https://peering-forum.ru/en/">MSK-IX Peering Forum 2018</a>, Moscow, RU - November 23, 2018 - Rebecca Stanić</li>
+<li><a href="../presentation/20181121-DENOG10-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.denog.de/de/meetings/denog10/denog10.html">DENOG10</a>, Darmstadt, DE - November 21, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20181109-ITNOG4-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.itnog.it/itnog4/">ITNOG4</a>, Bologna, IT - November 9, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20181104-EuroIX33-Lightning-Introduction-to-PeeringDB-API-Nipper.pdf">Introduction to PeeringDB API</a> at the <a href="https://www.euro-ix.net/">33rd Euro-IX Forum</a>, Venice, IT - November 6, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20181031-ngNOG-PeeringDB.pdf">PeeringDB Introduction</a> at <a href="https://nog.ng/">ngNOG 2018</a>, Lagos, NG - October 31, 2018 - Ben Ryall</li>
+<li><a href="../presentation/20181030-SwiNOG34-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.swinog.ch/meetings/swinog34/">SwiNOG #34</a>, Berne, CH - October 30, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20181025-PeeringAsia20-Nipper.pdf">PeeringDB Update and Japanese Localization Experience</a> at <a href="https://www.peeringasia.com/">Peering Asia 2.0</a>, Hong Kong, HK - October 25, 2018 - Arnold Nipper and Masataka Mawatari</li>
+<li><a href="../presentation/20180924-SAFNOG-4-Nipper.pdf">PeeringDB Update</a> at <a href="http://www.safnog.org/">SAFNOG-4/EANOG/tzNOG</a>, Dar es Salaam, TZ - September 25, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180918-EPF13-Stanic.pdf">PeeringDB Update</a> at <a href="https://www.peering-forum.eu/">EPF 13</a>, Athens, GR - September 18, 2018 - Rebecca Stanić</li>
+<li><a href="../presentation/Ix-forum-natal-peeringdb.20180914.pdf">Cadastro para participantes do IX.br</a> at <a href="https://regional.forum.ix.br/24-RN/">IX (PTT) Fórum Regional</a>, Natal, BR - September 14, 2018 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20180907_apnic46_peeringdb_i18n_mawatari.pdf">PeeringDB Frontend Translation Project</a> at <a href="https://conference.apnic.net/46/">APNIC 46</a>, Noumea, NC - September 12, 2018 - Masataka Mawatari</li>
+<li><a href="../presentation/20180821-AfPIF2018-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.afpif.org/afpif2018/">AfPIF2018</a>, Cape Town, ZA - August 23, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180820-AF-IX%40AfPIF2018-Nipper.pdf">PeeringDB for IXes</a> at <a href="https://www.af-ix.net/">AFIX</a>, Cape Town, ZA - August 20, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180810-SANOG32-Lightning-Introduction-to-PeeringDB-API-Nipper.pdf">Introduction to PeeringDB API</a> at <a href="http://www.sanog.org/sanog32/">SANOG 32</a>, Dhaka, BD - August 10, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180809-SANOG32-Update-Nipper.pdf">PeeringDB Update</a> at <a href="http://www.sanog.org/sanog32/">SANOG 32</a>, Dhaka, BD - August 9, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180622-NEPF-Gilmore.pdf">PeeringDB: What is it, how to and benefits</a> at <a href="http://nepeeringforum.org/">New England Peering Forum 2018</a>, Cambridge, MA, US - June 22, 2018 - Patrick W. Gilmore</li>
+<li><a href="../presentation/20180619-SEE7-Lightning-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.ripe.net/participate/meetings/regional-meetings/see/see-7">SEE 7</a>, Timișoara, R0 - June 18, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180605-ENOG15-Nipper-V2.pdf">PeeringDB Update</a> at <a href="https://www.enog.org/enog-15/programme/agenda/">ENOG 15</a>, Moscow, RU - June 5, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180524-SwiNOG-33-Lightning-Nipper-V2.pdf">PeeringDB Update</a> at <a href="http://www.swinog.ch/meetings/swinog33/index.asp">SwiNOG 33</a>, Berne, CH - May 24, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/gter45-peeringdb.20180515.pdf">PeeringDB Update e cadastro de Facilities</a> at <a href="http://gtergts.nic.br/">GTER 45</a>, Florianópolis, BR - May 22, 2018 - Julimar Lunguinho Mendes (<a href="https://www.youtube.com/watch?v=WgACfvJ-HFY">video</a>)</li>
+<li><a href="../presentation/20180516-RIPE76-Lightning-Nipper-V2.pdf">PeeringDB Update</a> at <a href="https://ripe76.ripe.net/programme/meeting-plan/connect-wg/">RIPE 76 Connect Working Group</a>, Marseille, FR - May 16, 2018 - Arnold Nipper (<a href="https://ripe76.ripe.net/archives/video/49">video</a>)</li>
+<li><a href="../presentation/20180508-AIS2018-Nipper-v2.pdf">PeeringDB Update</a> at <a href="https://internetsummitafrica.org/">African Internet Summit 2018</a>, Dakar, SN - May 8, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180309-DKNOG8-Lightning-Nipper.pdf">PeeringDB Update</a> at <a href="https://dknog8.dknog.dk/">DKNOG8</a>, Copenhagen, DK - March 9, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180307-CEE-Peering-Days-Lightning-Nipper.pdf">PeeringDB Update</a> at <a href="https://2018.peeringdays.eu/programme.php">CEE Peering Days 2018</a>, Berlin, DE - March 7, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180226-Apricot2018-Nipper.pdf">Introduction to PeeringDB</a> at <a href="https://2018.apricot.net/program/schedule/#/day/8/peering-and-interconnection-ii-global">APRICOT 2018</a>, Kathmandu, NP - February 26, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180224-17th-APIX-Nipper.pdf">PeeringDB Update</a> at <a href="http://apix.asia/?page_id=75">APIX Meeting #17</a>, Kathmandu, NP - February 24, 2018 - Arnold Nipper</li>
+<li><a href="../presentation/20180208-Capacity-India-and-SAARC-Nipper.pdf">PeeringDB Introduction</a> at <a href="http://www.capacityconferences.com/India-Connect-Agenda">Capacity India &amp; SAARC 2018</a>, New Delhi, IN - February 8, 2018 - Arnold Nipper</li>
+</ul>
+<h2 id="2017">2017</h2>
+<ul>
+<li><a href="../presentation/20171114-alnof-sanghani.pdf">PeeringDB Update</a> at <a href="https://www.nix.cz/">NIX.cz Member Meering</a>, Prague, CZ - November 23, 2017 - Bijal Sanghani</li>
+<li><a href="../presentation/20171123-DENOG9-nipper.pdf">PeeringDB Update</a> at <a href="http://www.denog.de/de/meetings/denog9/agenda.html">DENOG9</a>, Darmstadt, DE - November 23, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20171114-alnof-sanghani.pdf">PeeringDB Update</a> at <a href="https://alnof.namex.it/">ALNOF</a>, Tirana, AL - November 14, 2017 - Bijal Sanghani</li>
+<li><a href="../presentation/20171101-Peering-Asia-nipper.pdf">PeeringDB Update</a> at <a href="http://peeringasia.com/">Peering Asia 1.0</a>, Kyoto, JP - November 1, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170926-topix-meeting-sanghani.pdf">PeeringDB Update</a> at <a href="https://www.top-ix.org/en/2017/07/31/104342/">TOP-IX Meeting</a>, Torino, IT - September 26, 2017 - Bijal Sanghani</li>
+<li><a href="../presentation/20170915-Neutral-Peering-Day-2017-nipper.pdf">PeeringDB Update</a> at <a href="https://neutralpeeringdays.net/#Program">NPD 17</a>, The Hague, NL - September 15, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170906-SAFNOG-3-nipper.pdf">PeeringDB Update</a> at <a href="http://www.safnog.org/safnog-3-with-iweek-in-durban">SAFNOG-3</a>, Durban, ZA - September 6, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170824-AfPIF2017-nipper.pdf">PeeringDB Update</a> at <a href="http://www.internetsociety.org/afpif/2017/">AfPIF 2017</a>, Abidjan, CI - August 24, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170710-SANOG30-nipper.pdf">PeeringDB Update</a> at <a href="http://www.sanog.org/sanog30/program.html">SANOG 30</a> Peering Forum, Gurgaon, IN - July 10, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170622-decix-technical-meeting-nipper-v2.pdf">More benefits from PeeringDB</a> at <a href="https://www.de-cix.net/en/news-events/events/de-cix-technical-meeting">DE-CIX Technical Meeting</a>, Frankfurt, DE - June 22, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170605-nanog-70-hughes-peeringdb.pdf">PeeringDB Update</a> at <a href="https://www.nanog.org/meetings/nanog70/home">NANOG 70</a>, Bellevue, WA, US - June 5, 2017 - Aaron Hughes</li>
+<li><a href="../presentation/20170602-bosnog-mcmanus.pdf">PeeringDB Update</a> at <a href="https://www.meetup.com/BOSNOG-The-Boston-Network-Operators-Group/events/239045101/">BOSNOG Meeting &amp; IX Peering Forum</a>, Cambridge, MA, US - June 2, 2017 - Stephen McManus</li>
+<li><a href="../presentation/gter43-peeringdb.20170522.pdf">Orientações no preenchimento de participantes do IX.br</a> at <a href="http://gtergts.nic.br/">GTER 43</a>, Foz do Iguaçu, BR - May 25, 2017 - Julimar Lunguinho Mendes</li>
+<li><a href="../presentation/20170523-ENOG13-Nipper.pdf">PeeringDB Update</a> at <a href="https://www.enog.org/enog-13/">ENOG 13.0</a>, Saint Petersburg, RU - May 23, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170426-gpf-12.0-hughes-peeringdb.pdf">PeeringDB Update</a> at <a href="https://www.peeringforum.com/gpf-12-0-peeringdb-update/">Global Peering Forum 12.0</a>, New York, NY, US - April 26, 2017 - Aaron Huges</li>
+<li><a href="../presentation/20170406-ESNOG19-Nipper.pdf">PeeringDB</a> at <a href="http://www.esnog.net/2017/01/goreesnog-reunion-19-csuccatnix-barcelona/">GORE/ESNOG Reunion 19</a>, Barcelona, ES - April 6, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170323-CEE-Peeringdays-Nipper.pdf">PeeringDB</a> at <a href="https://2017.peeringdays.eu/programme.php">CEE Peering Days 2017</a>, Ljubljana, SL - March 23, 2017 - Arnold Nipper</li>
+<li><a href="../presentation/20170228-Apricot2017-Nipper.pdf">PeeringDB 2.0</a> at <a href="https://2017.apricot.net/">APRICOT 2017</a>, Ho Chi Minh City, VN - February 28, 2017 - Arnold Nipper</li>
+</ul>
+<h2 id="2016">2016</h2>
+<ul>
+<li><a href="../presentation/2016-11-23-kikeautumn16-2.pdf">PeeringDB</a> at <a href="http://kikeevents.com/en/category/19-kike-conference/">19 KIKE Conference</a>, Serock, PL - November 23, 2016 - Robert Jakub</li>
+<li><a href="../presentation/20161103-ITNOG2-Nipper-peeringdb.pdf">PeeringDB 2.0</a> at <a href="http://www.itnog.it/itnog2/">ITNOG2</a>, Bologna, IT - November 3, 2016 - Arnold Nipper</li>
+<li><a href="../presentation/20160919-epf11-Loos-peeringdb.pdf">PeeringDB Product Committee Charter Survey</a> at <a href="https://www.peering-forum.eu/">EPF 11</a>, Sofia, BG - September 20, 2016 - Eric Loos</li>
+<li><a href="../presentation/20160916-npd16-Wollny-peeringdb.pdf">PeeringDB 2.0</a> at <a href="http://www.neutralpeeringdays.net/">NPD 16</a>, The Hague, NL - September 16, 2016 - Walt Wollny</li>
+<li><a href="../presentation/2016-08-30_afpif2016-Nipper-peeringdb.pdf">PeeringDB 2.0</a> at <a href="https://www.internetsociety.org/afpif-2016/">AfPIF 2016</a>, Dar es Salaam, TZ - August 30, 2016 - Arnold Nipper</li>
+<li><a href="../presentation/2016-08-29_afix2016-Nipper-peeringdb.pdf">PeeringDB 2.0 for IXPs</a> at <a href="http://www.af-ix.net/?q=resources/2016/08/afix-2016-meeting-agenda">AFIX 2016</a>, Dar es Salaam, TZ - August 29, 2016 - Arnold Nipper</li>
+<li><a href="../presentation/2016-06-07_PeeringDB-2.0_ENOG11.pdf">PeeringDB 2.0</a> at <a href="https://www.enog.org/meetings/enog-11/">ENOG 11</a>, Moscow, RU - June 7, 2016 - Arnold Nipper</li>
+<li><a href="../presentation/2016-05-25_81-ripe-72-peeringdb.pdf">PeeringDB 2.0</a> at <a href="https://ripe72.ripe.net/">RIPE 72</a>, Copenhagen, DK - May 25, 2016 - Greg Hankins</li>
+<li><a href="../presentation/2016-05-12_chi-nog-06-peeringdb.pdf">PeeringDB 2.0</a> at <a href="http://chinog.org/meetings/chi-nog-06/">CHI-NOG 06</a>, Chicago, IL, US - May 12, 2016 - Matt Griswold</li>
+<li><a href="../presentation/2016-05-12_PeeringDB-2.0_GTER_41.pdf">PeeringDB 2.0 e o Cenário Brasileiro</a> and <a href="../presentation/2016-05-12_IX.br_PeeringDB_Guide.pdf">IX.br Guia de cadastro de informações de ASNs no PeeringDB</a> at <a href="http://gtergts.nic.br/">GTER 41</a>, Uberlândia, BR - May 12, 2016 - Eduardo Ascenço Reis</li>
+<li><a href="../presentation/2016-04-26_PeeringDB_28th_Euro-IX_Forum.pdf">PeeringDB 2.0 for IXPs</a> at <a href="https://www.euro-ix.net/">28th Euro-IX Forum</a>, Luxembourg, LU - April 26, 2016 - Greg Hankins / Arnold Nipper</li>
+<li><a href="https://www.ripe.net/participate/meetings/regional-meetings/see-5">RIPE SEE 5</a>, Tirana, AL - April 19, 2016 - Arnold Nipper</li>
+<li><a href="../presentation/2016-04-21_PeeringDB_UKNOF34.pdf">PeeringDB 2.0</a> at <a href="https://indico.uknof.org.uk/conferenceDisplay.py?confId=36">UKNOF34</a>, Manchester, UK - April 21, 2016 - Greg Hankins</li>
+<li><a href="../presentation/2016-04-13_PeeringTrack-PDB-Update-GPF11.pdf">PeeringDB Update</a> at <a href="https://www.peeringforum.com/">GPF 11</a>, Los Angeles, CA, US - April 13, 2016 - Aaron Hughes</li>
+<li><a href="http://www.netnod.se/netnod-spring-meeting-2016">NetNod</a>, Stockholm, SE - March 17, 2016 - Job Snijders</li>
+<li><a href="http://www.dknog.dk/events/dknog6/">DKNOG6</a>, Copenhagen, DK - March 10, 2016 - Job Snijders</li>
+<li><a href="../presentation/PeeringTrack-PDB-Update-20160205.pdf">PeeringDB Update</a> - Aaron Hughes<ul>
+<li><a href="https://2016.apricot.net/">APRICOT 2016</a>, Auckland, NZ - February 23, 2016 - Aaron Hughes</li>
+<li><a href="http://nanog.org/meetings/nanog66/home">NANOG 66</a>, San Diego, CA, US - February 10, 2016 - Aaron Hughes</li>
+</ul>
+</li>
+<li><a href="../presentation/PeeringDB_Version_2-Coding_Introduction.pdf">PeeringDB Version 2 Coding Introduction</a> at <a href="http://nanog.org/meetings/nanog66/home">NANOG 66</a>, San Diego, CA, US - February 8, 2016 - Matt Griswold</li>
+</ul>
+<h2 id="2015">2015</h2>
+<ul>
+<li><a href="../presentation/PeeringDB_Version_2-Brazil.pdf">PeeringDB Version 2 Brazil</a> - Matt Griswold / Greg Hankins<ul>
+<li><a href="http://ix.br/pttforum/9/index-en.html">IX (PTT) Fórum 9</a>, São Paulo, BR - December 8, 2015 - Greg Hankins</li>
+</ul>
+</li>
+<li><a href="../presentation/PeeringDB_Version_2-Introduction.pdf">PeeringDB Version 2 Introduction</a> - Matt Griswold<ul>
+<li><a href="https://www.euro-ix.net/news-and-events/euro-ix-forum/">27th Euro-IX Forum</a>, Berlin, DE - October 26, 2015 - Greg Hankins</li>
+<li><a href="http://www.denog.de/meetings/denog7/?lang=en">DENOG7</a>, Darmstadt, DE - October 30, 2015 - Arnold Nipper </li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

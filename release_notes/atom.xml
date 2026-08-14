@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PeeringDB Release Notes</title>
+  <id>https://docs-dev.peeringdb.dk/</id>
+  <updated>2026-07-22T00:00:00Z</updated>
+  <link href="https://docs-dev.peeringdb.dk/release_notes/atom.xml" rel="self"/>
+  <link href="https://docs-dev.peeringdb.dk/"/>
+  <author>
+    <name>PeeringDB</name>
+  </author>
+  <entry>
+    <title>Release 2.81.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2810</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2810"/>
+    <published>2026-07-22T00:00:00Z</published>
+    <updated>2026-07-22T00:00:00Z</updated>
+    <summary>8 GitHub issues addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.80.1</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2801</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2801"/>
+    <published>2026-06-24T00:00:01Z</published>
+    <updated>2026-06-24T00:00:01Z</updated>
+    <summary>1 GitHub issue addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.80.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2800</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2800"/>
+    <published>2026-06-24T00:00:00Z</published>
+    <updated>2026-06-24T00:00:00Z</updated>
+    <summary>8 GitHub issues addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.79.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2790</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2790"/>
+    <published>2026-05-20T00:00:00Z</published>
+    <updated>2026-05-20T00:00:00Z</updated>
+    <summary>9 GitHub issues addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.78.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2780</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2780"/>
+    <published>2026-04-29T00:00:00Z</published>
+    <updated>2026-04-29T00:00:00Z</updated>
+    <summary>6 GitHub issues addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.77.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2770</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2770"/>
+    <published>2026-03-18T00:00:00Z</published>
+    <updated>2026-03-18T00:00:00Z</updated>
+    <summary>19 GitHub issues addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.76.4</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2764</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2764"/>
+    <published>2026-03-02T00:00:00Z</published>
+    <updated>2026-03-02T00:00:00Z</updated>
+    <summary>1 GitHub issue addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.76.3</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2763</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2763"/>
+    <published>2026-02-28T00:00:00Z</published>
+    <updated>2026-02-28T00:00:00Z</updated>
+    <summary>1 GitHub issue addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.76.2</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2762</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2762"/>
+    <published>2026-02-26T00:00:01Z</published>
+    <updated>2026-02-26T00:00:01Z</updated>
+    <summary>1 GitHub issue addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.76.1</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2761</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2761"/>
+    <published>2026-02-26T00:00:00Z</published>
+    <updated>2026-02-26T00:00:00Z</updated>
+    <summary>1 GitHub issue addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.76.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2760</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2760"/>
+    <published>2026-02-25T00:00:00Z</published>
+    <updated>2026-02-25T00:00:00Z</updated>
+    <summary>16 GitHub issues addressed in this release.</summary>
+  </entry>
+  <entry>
+    <title>Release 2.75.0</title>
+    <id>https://docs-dev.peeringdb.dk/release_notes/#release-2750</id>
+    <link href="https://docs-dev.peeringdb.dk/release_notes/#release-2750"/>
+    <published>2026-01-28T00:00:00Z</published>
+    <updated>2026-01-28T00:00:00Z</updated>
+    <summary>12 GitHub issues addressed in this release.</summary>
+  </entry>
+</feed>

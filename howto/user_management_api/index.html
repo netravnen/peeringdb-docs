@@ -1,0 +1,502 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/howto/user_management_api/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>HOWTO: Manage Users With Our API - PeeringDB Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../gov/" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../committee/admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../committee/admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../committee/operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../committee/outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../committee/product/" class="dropdown-item">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../release_notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#howto-manage-users-with-our-api" class="nav-link">HOWTO: Manage Users With Our API</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#authentication" class="nav-link">Authentication</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rate-limits" class="nav-link">Rate limits</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#endpoints" class="nav-link">Endpoints</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#error-handling" class="nav-link">Error handling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#improving-this-howto" class="nav-link">Improving this HOWTO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="howto-manage-users-with-our-api">HOWTO: Manage Users With Our API</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This document outlines how to use the Organization Users API for managing users within an organization. The API provides endpoints for listing, adding, updating roles, and removing users.</p>
+<h2 id="authentication">Authentication</h2>
+<p>All API requests require authentication using API keys. There are two types of authentication:</p>
+<ol>
+<li><strong>User API Key:</strong> The user must be an admin of the organization</li>
+<li><strong>Organization API Key:</strong> The key must have specific permissions for the operation</li>
+</ol>
+<p>Include the API key in the HTTP header:</p>
+<pre><code>`Authorization: api-key YOUR_API_KEY`
+</code></pre>
+<h2 id="rate-limits">Rate limits</h2>
+<p>All endpoints are rate-limited to 1 request per second. </p>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="list-organization-users">List organization users</h3>
+<p>Retrieves all users associated with an organization.</p>
+<p><strong>URL:</strong>  <code>/api/org/{org_id}/users/</code></p>
+<p><strong>Method:</strong>  <code>GET</code></p>
+<p><strong>Required permission:</strong> There are two options</p>
+<ol>
+<li><code>admin organization</code></li>
+<li><code>read</code> on <code>org.{id}.users</code> namespace (basically just add <code>User Management Privileges</code> permission in Organization API Key Permission editor)</li>
+</ol>
+<p><img alt="List users permission" src="../images/list_users_no_other_permissions.png" /></p>
+<p><strong>Example request:</strong></p>
+<pre><code>curl -X GET \
+ -H &quot;Authorization: api-key a3bXQSbD.D5WtkaSzsryacujQCMeY2hSzcDO1d3oP&quot; \
+ https://peeringdb.com/api/org/365/users/
+</code></pre>
+<p><strong>Successful response</strong> (200 OK):</p>
+<pre><code>{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 16,
+      &quot;first_name&quot;: &quot;John&quot;,
+      &quot;last_name&quot;: &quot;Doe&quot;,
+      &quot;full_name&quot;: &quot;John Doe&quot;,
+      &quot;is_active&quot;: true,
+      &quot;date_joined&quot;: &quot;2024-10-23T08:37:39Z&quot;,
+      &quot;status&quot;: &quot;ok&quot;,
+      &quot;role&quot;: &quot;admin&quot;
+    },
+    {
+      &quot;id&quot;: 21,
+      &quot;first_name&quot;: &quot;Jane&quot;,
+      &quot;last_name&quot;: &quot;Smith&quot;,
+      &quot;full_name&quot;: &quot;Jane Smith&quot;,
+      &quot;is_active&quot;: true,
+      &quot;date_joined&quot;: &quot;2024-10-23T09:13:50Z&quot;,
+      &quot;status&quot;: &quot;ok&quot;,
+      &quot;role&quot;: &quot;member&quot;
+    }
+  ],
+  &quot;meta&quot;: {}
+}
+</code></pre>
+<h3 id="add-user-to-organization">Add user to organization</h3>
+<p>Adds a user to the organization with a specified role.</p>
+<p><strong>URL:</strong> <code>/api/org/{org_id}/users/add/</code></p>
+<p><strong>Method:</strong> <code>POST</code></p>
+<p><strong>Required permission:</strong> There are two options</p>
+<ol>
+<li><code>admin organization</code></li>
+<li><code>create</code> on <code>org.{id}.users namespace</code></li>
+</ol>
+<p><img alt="Add users permission" src="../images/create_permission.png" /></p>
+<p><strong>Request body:</strong></p>
+<ul>
+<li><code>user_email</code> (required): Email address of the user to add</li>
+<li><code>role</code> (optional): Role to assign (<code>admin</code> or <code>member</code>, defaults to <code>member</code>)</li>
+</ul>
+<p><strong>Example request:</strong></p>
+<pre><code>curl -X POST \
+ -H &quot;Authorization: api-key AAzWkPvR.waJqOendMCyS0eOdFGXHGhiYjtee6h6X&quot; \
+ -H &quot;Content-Type: application/json&quot; \
+ -d '{&quot;user_email&quot;: &quot;user@email.com&quot;, &quot;role&quot;: &quot;admin&quot;}' \
+ http://peeringdb.com/api/org/365/users/add
+</code></pre>
+<p><strong>Successful response</strong> (201 Created):</p>
+<pre><code>{
+ &quot;data&quot;: [
+   {
+     &quot;id&quot;: 22,
+     &quot;first_name&quot;: &quot;User&quot;,
+     &quot;last_name&quot;: &quot;user&quot;,
+     &quot;full_name&quot;: &quot;User user&quot;,
+     &quot;is_active&quot;: true,
+     &quot;date_joined&quot;: &quot;2024-10-23T08:37:39Z&quot;,
+     &quot;status&quot;: &quot;ok&quot;,
+     &quot;role&quot;: &quot;admin&quot;
+   }
+ ],
+ &quot;meta&quot;: {}
+}
+</code></pre>
+<p><strong>Error responses</strong>:</p>
+<ul>
+<li><strong>400 Bad Request</strong>: Missing or invalid parameters</li>
+<li><strong>403 Forbidden</strong>: Insufficient permissions</li>
+<li><strong>404 Not Found</strong>: User not found</li>
+</ul>
+<h3 id="update-user-role">Update user role</h3>
+<p>Updates a user's role within the organization.</p>
+<p><strong>URL:</strong> <code>/api/org/{org_id}/users/{user_id}/</code></p>
+<p><strong>Method:</strong> <code>PUT</code></p>
+<p><strong>Required permission:</strong> There are two options</p>
+<ol>
+<li><code>admin organization</code></li>
+<li><code>update</code> on <code>org.{id}.users</code> namespace</li>
+</ol>
+<p><img alt="Update users permission" src="../images/update_permission.png" /></p>
+<p><strong>Request body:</strong></p>
+<ul>
+<li><code>role</code> (required): New role to assign (<code>admin</code> or <code>member</code>)</li>
+</ul>
+<p><strong>Example request:</strong></p>
+<pre><code>curl -X PUT \
+ -H &quot;Authorization: api-key AAzWkPvR.waJqOendMCyS0eOdFGXHGhiYjtee6h6X&quot; \
+ -H &quot;Content-Type: application/json&quot; \
+ -d '{&quot;role&quot;: &quot;admin&quot; }' \
+ http://peeringdb.com/api/org/365/users/21
+</code></pre>
+<p><strong>Successful response</strong> (200 OK):</p>
+<pre><code>{
+ &quot;data&quot;: [
+   {
+     &quot;id&quot;: 21,
+     &quot;first_name&quot;: &quot;&quot;,
+     &quot;last_name&quot;: &quot;&quot;,
+     &quot;full_name&quot;: &quot;&quot;,
+     &quot;is_active&quot;: true,
+     &quot;date_joined&quot;: &quot;2024-10-23T09:13:50Z&quot;,
+     &quot;status&quot;: &quot;ok&quot;,
+     &quot;role&quot;: &quot;admin&quot;
+   }
+ ],
+ &quot;meta&quot;: {}
+}
+</code></pre>
+<p><strong>Error responses:</strong></p>
+<ul>
+<li><strong>400 Bad Request</strong>: Missing or invalid parameters</li>
+<li><strong>403 Forbidden</strong>: Insufficient permissions</li>
+<li><strong>404 Not Found</strong>: User not in organization</li>
+</ul>
+<h3 id="remove-user-from-organization">Remove user from organization</h3>
+<p>Removes a user from the organization.</p>
+<p><strong>URL:</strong> <code>/api/org/{org_id}/users/remove/</code></p>
+<p><strong>Method:</strong> <code>DELETE</code></p>
+<p><strong>Required permission:</strong> <code>delete</code> on <code>org.{id}.users</code> namespace</p>
+<p><img alt="Delete users permission" src="../images/delete_permission.png" /></p>
+<p><strong>Request body:</strong></p>
+<ul>
+<li><code>user_email</code> (required): Email address of the user to remove</li>
+</ul>
+<p><strong>Example request:</strong></p>
+<pre><code>curl -X DELETE \
+ -H &quot;Authorization: api-key AAzWkPvR.waJqOendMCyS0eOdFGXHGhiYjtee6h6X&quot; \
+ -H &quot;Content-Type: application/json&quot; \
+ -d '{&quot;user_email&quot;: &quot;user@email.com&quot; }' \
+ http://localhost:8000/api/org/365/users/remove
+</code></pre>
+<p><strong>Successful response</strong> (204 No Content)</p>
+<p><strong>Error responses:</strong></p>
+<ul>
+<li><strong>400 Bad Request</strong>: Missing or invalid parameters</li>
+<li><strong>403 Forbidden</strong>: Insufficient permissions</li>
+<li><strong>404 Not Found</strong>: User not in organization</li>
+</ul>
+<h2 id="error-handling">Error handling</h2>
+<p>The API returns appropriate HTTP status codes and error messages:</p>
+<ul>
+<li><strong>400 Bad Request</strong>: Invalid input parameters</li>
+<li><strong>403 Forbidden</strong>: Authentication failed or insufficient permissions</li>
+<li><strong>404 Not Found</strong>: Requested resource not found</li>
+<li><strong>429 Too Many Requests</strong>: Rate limit exceeded</li>
+</ul>
+<p>Error responses include a detail message explaining the issue:</p>
+<pre><code>{
+ &quot;meta&quot;: {
+   &quot;error&quot;: &quot;Permission denied: User is not an admin of this organization&quot;
+ }
+}
+</code></pre>
+<h2 id="permissions">Permissions</h2>
+<p>The API uses a permission system to control access:</p>
+<ol>
+<li>For user API keys, the user must be an admin of the organization</li>
+<li>For organization API keys, the key must have specific permissions, editable through Organization API Key Permission editor UI:<ul>
+<li><code>User Management Privileges Permission</code>: List users</li>
+<li><code>Check Create Option</code>: Add users</li>
+<li><code>Check Update Option</code>: Update user roles</li>
+<li><code>Check Delete Option</code>: Remove users</li>
+</ul>
+</li>
+</ol>
+<h2 id="improving-this-howto">Improving this HOWTO</h2>
+<p>Please let us know how we could improve this article. Send a mail to the <a href="mailto:outreachcom@lists.peeringdb.com">Outreach Committee</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

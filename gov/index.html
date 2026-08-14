@@ -1,0 +1,455 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/gov/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Governance - PeeringDB Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../extra.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../committee/admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../committee/admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../committee/operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../committee/outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="../committee/product/" class="dropdown-item">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../release_notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../howto/query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#peeringdb-governance" class="nav-link">PeeringDB Governance</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#mission-statement" class="nav-link">Mission Statement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#organizational-documents" class="nav-link">Organizational Documents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#policies" class="nav-link">Policies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#member-meetings" class="nav-link">Member Meetings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#board-meetings-consents" class="nav-link">Board Meetings &amp; Consents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#strategic-plan-organizational-objectives" class="nav-link">Strategic Plan &amp; Organizational Objectives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#finances" class="nav-link">Finances</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#washington-state-nonprofit-corporation-annual-reports" class="nav-link">Washington State Nonprofit Corporation Annual Reports</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#elections-surveys" class="nav-link">Elections &amp; Surveys</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#board-of-directors" class="nav-link">Board of Directors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#officers" class="nav-link">Officers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#admin-committee" class="nav-link">Admin Committee</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#operations-committee" class="nav-link">Operations Committee</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#outreach-committee" class="nav-link">Outreach Committee</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#product-committee" class="nav-link">Product Committee</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#alumni" class="nav-link">Alumni</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="peeringdb-governance">PeeringDB Governance</h1>
+<h2 id="mission-statement">Mission Statement</h2>
+<p>PeeringDB, a nonprofit member-based organization, facilitates the interconnection of Internet networks globally, with user-maintained information.</p>
+<h2 id="organizational-documents">Organizational Documents</h2>
+<ul>
+<li><a href="legaldocs/2015-12-08_PeeringDB_Organizational_Consent.pdf">Organizational Consent (2015-12-08)</a></li>
+<li><a href="legaldocs/2015-12-16_PeeringDB_Certificate%20and%20Articles%20of%20Incorporation.pdf">Certificate and Articles of Incorporation (2015-12-16)</a></li>
+<li><a href="legaldocs/2026-01-14_PeeringDB_Bylaws.pdf">Bylaws (2026-01-14)</a></li>
+</ul>
+<h2 id="policies">Policies</h2>
+<ul>
+<li><a href="https://www.peeringdb.com/aup">Acceptable Use Policy</a></li>
+<li><a href="legaldocs/2015-12-08_PeeringDB_Conflict_of_Interest_Policy.pdf">Conflict of Interest Policy</a></li>
+<li><a href="misc/2020-04-06_PeeringDB_Data_Ownership_Policy_Document_v1.0.pdf">Data Ownership Policy</a></li>
+<li><a href="legaldocs/2017-05-18_PeeringDB_Financial_Controls_Policy.pdf">Financial Controls Policy</a></li>
+<li><a href="legaldocs/2022-12-24_PeeringDB_Press_Release_Policy.pdf">Press Release Policy</a></li>
+<li><a href="misc/2017-04-02-PeeringDB_Privacy_Policy.pdf">Privacy Policy</a></li>
+</ul>
+<h2 id="member-meetings">Member Meetings</h2>
+<ul>
+<li>April 21st, 2026: <a href="legaldocs/2026-04-21_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2026-04-21_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2026-04-21_PeeringDB_Member_Meeting_Audio.opus">Audio</a></li>
+<li>April 10th, 2025: <a href="legaldocs/2025-04-10_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2025-04-10_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2025-04-10_PeeringDB_Member_Meeting_Audio.mp3">Audio</a> - <a href="https://youtu.be/m4BaRMGwo4s">Video</a></li>
+<li>April 18th, 2024: <a href="legaldocs/2024-04-18_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2024-04-18_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2024-04-18_PeeringDB_Member_Meeting_Audio.mp3">Audio</a> - <a href="https://youtu.be/dfNHXOw-lvk">Video</a></li>
+<li>April 13th, 2023: <a href="legaldocs/2023-04-13_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2023-04-13_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a></li>
+<li>April 12th, 2022: <a href="legaldocs/2022-04-12_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2022-04-12_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2022-04-12_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+<li>April 8th, 2021: <a href="legaldocs/2021-04-08_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2021-04-08_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2021-04-08_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+<li>April 17th, 2020: <a href="legaldocs/2020-04-17_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2020-04-17_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2020-04-17_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+<li>April 25th, 2019: <a href="legaldocs/2019-04-25_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2019-04-25_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2019-04-25_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+<li>April 19th, 2018: <a href="legaldocs/2018-04-19_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2018-04-19_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2018-04-19_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+<li>April 20th, 2017: <a href="legaldocs/2017-04-20_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2017-04-20_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2017-04-20_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+<li>April 21st, 2016: <a href="legaldocs/2016-04-21_PeeringDB_Member_Meeting_Agenda.txt">Agenda</a> - <a href="legaldocs/2016-04-21_PeeringDB_Member_Meeting_Minutes.pdf">Minutes</a> - <a href="legaldocs/2016-04-21_PeeringDB_Member_Meeting_Audio.mp3">Audio</a></li>
+</ul>
+<h2 id="board-meetings-consents">Board Meetings &amp; Consents</h2>
+<ul>
+<li>2026: <a href="legaldocs/2026-06-08_PeeringDB_Board_Minutes.pdf">2026-06-08</a>, <a href="legaldocs/2026-05-06_PeeringDB_Board_Minutes.pdf">2026-05-06</a>, <a href="legaldocs/2026-01-14_PeeringDB_Board_Minutes.pdf">2026-01-14</a></li>
+<li>2025: <a href="legaldocs/2025-05-06_PeeringDB_Board_Minutes.pdf">2025-05-06</a>, <a href="legaldocs/2025-01-23_PeeringDB_Board_Minutes.pdf">2025-01-23</a></li>
+<li>2024: <a href="legaldocs/2024-05-18_PeeringDB_Board_Consent_of_Directors_in_Lieu_of_Annual_Meeting.pdf">2024-05-18</a>, <a href="legaldocs/2024-02-27_PeeringDB_Board_Minutes.pdf">2024-02-27</a></li>
+<li>2023: <a href="legaldocs/2023-08-11_PeeringDB_Board_Minutes.pdf">2023-08-11</a>, <a href="legaldocs/2023-05-18_PeeringDB_Board_Minutes.pdf">2023-05-18</a>, <a href="legaldocs/2023-05-08_PeeringDB_Board_Minutes.pdf">2023-05-08</a></li>
+<li>2022: <a href="legaldocs/2022-07-29_PeeringDB_Board_Minutes.pdf">2022-07-29</a></li>
+<li>2021: <a href="legaldocs/2021-09-01_PeeringDB_Board_Consent_of_Directors_in_Lieu_of_Annual_Meeting.pdf">2021-09-01</a>, <a href="legaldocs/2021-01-13_PeeringDB_Board_Minutes.pdf">2021-01-13</a></li>
+<li>2020: <a href="legaldocs/2020-07-09_PeeringDB_Board_Minutes.pdf">2020-07-09</a>, <a href="legaldocs/2020-05-08_PeeringDB_Board_Minutes.pdf">2020-05-08</a>, <a href="legaldocs/2020-01-13_PeeringDB_Board_Minutes.pdf">2020-01-13</a></li>
+<li>2019: <a href="legaldocs/2019-09-27_PeeringDB_Board_Minutes.pdf">2019-09-27</a>, <a href="legaldocs/2019-07-16_PeeringDB_Board_Minutes.pdf">2019-07-16</a>, <a href="legaldocs/2019-05-16_PeeringDB_Board_Minutes.pdf">2019-05-16</a>, <a href="legaldocs/2019-03-27_PeeringDB_Board_Minutes.pdf">2019-03-27</a>, <a href="legaldocs/2019-01-29_PeeringDB_Board_Minutes.pdf">2019-01-29</a></li>
+<li>2018: <a href="legaldocs/2018-11-15_PeeringDB_Board_Minutes.pdf">2018-11-15</a>, <a href="legaldocs/2018-10-09_PeeringDB_Board_Minutes.pdf">2018-10-09</a>, <a href="legaldocs/2018-07-19_PeeringDB_Board_Minutes.pdf">2018-07-19</a>, <a href="legaldocs/2018-05-18_PeeringDB_Board_Consent_of_Directors_in_Lieu_of_Annual_Meeting.pdf">2018-05-18</a>, <a href="legaldocs/2018-04-09_PeeringDB_Board_Minutes.pdf">2018-04-09</a>, <a href="legaldocs/2018-02-08_PeeringDB_Board_Minutes.pdf">2018-02-08</a></li>
+<li>2017: <a href="legaldocs/2017-10-18_PeeringDB_Board_Minutes.pdf">2017-10-18</a>, <a href="legaldocs/2017-09-20_PeeringDB_Board_Minutes.pdf">2017-09-20</a>, <a href="legaldocs/2017-07-07_PeeringDB_Board_Minutes.pdf">2017-07-07</a>, <a href="legaldocs/2017-05-18_PeeringDB_Board_Minutes.pdf">2017-05-18</a>, <a href="legaldocs/2017-02-09_PeeringDB_Board_Minutes.pdf">2017-02-09</a>, <a href="legaldocs/2017-01-13_PeeringDB_Board_Minutes.pdf">2017-01-13</a></li>
+<li>2016: <a href="legaldocs/2016-12-02_PeeringDB_Board_Minutes.pdf">2016-12-02</a>, <a href="legaldocs/2016-09-22_PeeringDB_Board_Minutes.pdf">2016-09-22</a>, <a href="legaldocs/2016-08-10_PeeringDB_Board_Minutes.pdf">2016-08-10</a>, <a href="legaldocs/2016-07-01_PeeringDB_Board_Minutes.pdf">2016-07-01</a>, <a href="legaldocs/2016-05-18_PeeringDB_Board_Minutes.pdf">2016-05-18</a>, <a href="legaldocs/2016-04-06_PeeringDB_Board_Minutes.pdf">2016-04-06</a>, <a href="legaldocs/2016-03-04_PeeringDB_Board_Minutes.pdf">2016-03-04</a>, <a href="legaldocs/2016-02-04_PeeringDB_Board_Minutes.pdf">2016-02-04</a>, <a href="legaldocs/2016-01-07_PeeringDB_Board_Minutes.pdf">2016-01-07</a></li>
+<li>2015: <a href="legaldocs/2015-12-08_PeeringDB_Board_Minutes.pdf">2015-12-08</a></li>
+</ul>
+<h2 id="strategic-plan-organizational-objectives">Strategic Plan &amp; Organizational Objectives</h2>
+<ul>
+<li><a href="misc/2025-01-23-PeeringDB_Strategic_Plan_2024-2025.pdf">2024-2025</a></li>
+<li><a href="misc/2020-05-21-PeeringDB_Strategic_Plan_2020-2021.pdf">2020-2021</a></li>
+<li><a href="misc/2019-05-20-PeeringDB_Strategic_Plan_2019-2020.pdf">2019-2020</a></li>
+<li><a href="misc/2017-02-09-PeeringDB_Strategic_Plan_2017-2018-DRAFT.pdf">2017-2018 <em>DRAFT</em></a></li>
+</ul>
+<h2 id="finances">Finances</h2>
+<ul>
+<li>Finance Reports: <a href="finances/2025-12-31_PeeringDB_Finances.pdf">2025</a>, <a href="finances/2024-12-31_PeeringDB_Finances.pdf">2024</a>, <a href="finances/2023-12-31_PeeringDB_Finances.pdf">2023</a>, <a href="finances/2022-12-31_PeeringDB_Finances.pdf">2022</a>, <a href="finances/2021-12-31_PeeringDB_Finances.pdf">2021</a>, <a href="finances/2020-12-31_PeeringDB_Finances.pdf">2020</a>, <a href="finances/2019-12-31_PeeringDB_Finances.pdf">2019</a>, <a href="finances/2018-12-31_PeeringDB_Finances.pdf">2018</a>, <a href="finances/2017-12-31_PeeringDB_Finances.pdf">2017</a>, <a href="finances/2016-12-31_PeeringDB_Finances.pdf">2016</a>, <a href="finances/2015-12-31_PeeringDB_Finances.pdf">2015</a>, <a href="finances/2014-12-31_PeeringDB_Finances.pdf">2014</a></li>
+<li>IRS Form 990 Tax Exempt Return: <a href="finances/2026-05-15_2025_Form_990.pdf">2025</a>, <a href="finances/2025-05-13_2024_Form_990.pdf">2024</a>, <a href="finances/2024-05-12_2023_Form_990.pdf">2023</a>, <a href="finances/2023-05-09_2022_Form_990.pdf">2022</a>, <a href="finances/2022-05-10_2021_Form_990.pdf">2021</a>, <a href="finances/2021-05-12_2020_Form_990-EZ.pdf">2020</a>, <a href="finances/2020-05-13_2019_Form_990-EZ.pdf">2019</a>, <a href="finances/2019-05-09_2018_Form_990-EZ.pdf">2018</a>, <a href="finances/2018-05-11_2017_Form_990-EZ.pdf">2017</a>, <a href="finances/2017-05-10_2016_Form_990-EZ.pdf">2016</a>, <a href="finances/2016-02-18_2015_Form%20990-N.pdf">2015</a>, <a href="finances/2016-02-23_2014_Form%20990-N.pdf">2014</a></li>
+<li><a href="finances/2019-09-17_PeeringDB_IRS_Form_W-9.pdf">IRS Form W-9: Request for Taxpayer Identification Number and Certification (2019-09-17)</a></li>
+<li><a href="finances/2016-02-24_PeeringDB_IRS_501%28c%29%286%29_Exemption_Letter.pdf">IRS Exemption Letter for 501(c)(6) (2016-02-24)</a></li>
+<li><a href="finances/2016-01-07_PeeringDB_Non_Profit_Filing.pdf">IRS Form 1024: Application for Recognition of Exemption Under Section 501(c)(6) (2016-01-07)</a></li>
+</ul>
+<h2 id="washington-state-nonprofit-corporation-annual-reports">Washington State Nonprofit Corporation Annual Reports</h2>
+<ul>
+<li><a href="legaldocs/2025-11-14_PeeringDB_Annual_Report.pdf">2025-11-14</a>, <a href="legaldocs/2024-11-14_PeeringDB_Annual_Report.pdf">2024-11-14</a>, <a href="legaldocs/2023-11-03_PeeringDB_Annual_Report.pdf">2023-11-03</a>, <a href="legaldocs/2022-11-01_PeeringDB_Annual_Report.pdf">2022-11-01</a>, <a href="legaldocs/2021-11-01_PeeringDB_Annual_Report.pdf">2021-11-01</a>, <a href="legaldocs/2020-11-02_PeeringDB_Annual_Report.pdf">2020-11-02</a>, <a href="legaldocs/2019-11-01_PeeringDB_Annual_Report.pdf">2019-11-01</a>, <a href="legaldocs/2018-11-01_PeeringDB_Annual_Report.pdf">2018-11-01</a>, <a href="legaldocs/2017-12-01_PeeringDB_Annual_Report.pdf">2017-12-01</a>, <a href="legaldocs/2016-12-01_PeeringDB_Annual_Report.pdf">2016-12-01</a>, <a href="legaldocs/2016-05-18_PeeringDB_Amended_Annual_Report.pdf">2016-05-18</a> </li>
+</ul>
+<h2 id="elections-surveys">Elections &amp; Surveys</h2>
+<ul>
+<li>Election Results: <a href="misc/2026-04-30_Comprehensive_Poll_Results.pdf">2026</a>, <a href="misc/2025-04-30_Comprehensive_Poll_Results.pdf">2025</a>, <a href="misc/2024-04-30_Comprehensive_Poll_Results.pdf">2024</a>, <a href="misc/2023-04-30_Comprehensive_Poll_Results.pdf">2023</a>, <a href="misc/2022-04-30_Comprehensive_Poll_Results.pdf">2022</a>, <a href="misc/2021-04-30_Comprehensive_Poll_Results.pdf">2021</a>, <a href="misc/2020-04-30_Comprehensive_Poll_Results.pdf">2020</a>, <a href="misc/2019-04-30_Comprehensive_Poll_Results.pdf">2019</a>, <a href="misc/2018-04-30_Comprehensive_Poll_Results.pdf">2018</a>, <a href="misc/2017-04-30_Comprehensive_Poll_Results.pdf">2017</a>, <a href="misc/2016-04-30_Comprehensive_Poll_Results.pdf">2016</a>, <a href="misc/2015-12-01_Comprehensive_Poll_Results.pdf">2015</a></li>
+<li>Voter's Guides: <a href="misc/2026-04-14_election.html">2026</a>, <a href="misc/2025-04-14_election.html">2025</a>, <a href="misc/2024-04-14_election.html">2024</a>, <a href="misc/2023-04-14_election.html">2023</a>, <a href="misc/2022-04-14_election.html">2022</a>, <a href="misc/2021-04-14_election.html">2021</a>, <a href="misc/2020-04-14_election.html">2020</a>, <a href="misc/2019-04-14_election.html">2019</a>, <a href="misc/2018-04-14_election.html">2018</a>, <a href="misc/2017-04-14_election.html">2017</a>, <a href="misc/2016-04-14_election.html">2016</a>, <a href="misc/2015-11-14_election.html">2015</a></li>
+<li><a href="misc/2015-10-20_Announcement.txt">Announcement of survey results and Board election plan (2015-10-20)</a></li>
+<li><a href="misc/2015-08-00_PDB_Survey_results.pdf">Survey for future of PeeringDB (2015-08)</a></li>
+</ul>
+<h2 id="board-of-directors">Board of Directors</h2>
+<ul>
+<li>Seat 1 (term expires 2027): <a href="mailto:livio@peeringdb.com">Livio Morina</a>, 2023-</li>
+<li>Seat 2 (term expires 2028): <a href="mailto:brian@peeringdb.com">Brian Burke</a>, 2026-</li>
+<li>Seat 3 (term expires 2027): <a href="mailto:isabel@peeringdb.com">Isabel Odida</a>, 2025-</li>
+<li>Seat 4 (term expires 2028): <a href="mailto:marco@peeringdb.com">Marco Marzetti</a>, 2026-</li>
+<li>Seat 5 (term expires 2027): <a href="mailto:alex@peeringdb.com">Alexandre Corso</a>, 2025-</li>
+</ul>
+<h2 id="officers">Officers</h2>
+<ul>
+<li><a href="mailto:livio@peeringdb.com">Livio Morina</a>, President, 2026-</li>
+<li><a href="mailto:isabel@peeringdb.com">Isabel Odida</a>, Vice President, 2026-</li>
+<li><a href="mailto:shawna@peeringdb.com">Shawna Bong</a>, Secretary &amp; Treasurer, 2024-</li>
+</ul>
+<h2 id="admin-committee">Admin Committee</h2>
+<ul>
+<li>Please see the <a href="/committee/admin/">Admin Committee</a> page.</li>
+</ul>
+<h2 id="operations-committee">Operations Committee</h2>
+<ul>
+<li>Please see the <a href="/committee/operations/">Operations Committee</a> page.</li>
+</ul>
+<h2 id="outreach-committee">Outreach Committee</h2>
+<ul>
+<li>Please see the <a href="/committee/outreach/">Outreach Committee</a> page.</li>
+</ul>
+<h2 id="product-committee">Product Committee</h2>
+<ul>
+<li>Please see the <a href="/committee/product/">Product Committee</a> page.</li>
+</ul>
+<h2 id="alumni">Alumni</h2>
+<ul>
+<li>Chris Caputo, Secretary &amp; Treasurer 2015-2024</li>
+<li>Patrick W. Gilmore, Board of Directors 2015-2023, Vice President 2015-2016</li>
+<li>Matt Griswold, Board of Directors 2015-2017</li>
+<li>Aaron Hughes, Board of Directors 2015-2026, President 2015-2023, 2025-2026, Vice President 2023-2025</li>
+<li>Fredrik Korsbäck, Board of Directors 2019-2021</li>
+<li>Rahul Makhija, Board of Directors 2023-2025</li>
+<li>Christopher Malayter, Board of Directors 2021-2025, President 2023-2025</li>
+<li>Arnold Nipper, Board of Directors 2015-2019</li>
+<li>Bijal Sanghani, Board of Directors 2017-2023</li>
+<li>Job Snijders, Board of Directors 2015-2026, Vice President 2016-2023</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

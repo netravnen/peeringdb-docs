@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PeeringDB Blog</title>
+  <id>https://docs-dev.peeringdb.dk/</id>
+  <updated>2026-07-21T15:01:04Z</updated>
+  <link href="https://docs-dev.peeringdb.dk/blog/atom.xml" rel="self"/>
+  <link href="https://docs-dev.peeringdb.dk/"/>
+  <author>
+    <name>PeeringDB</name>
+  </author>
+  <entry>
+    <title>Do We Still Need Public Beta?</title>
+    <id>https://docs-dev.peeringdb.dk/blog/public_beta/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/public_beta/"/>
+    <published>2026-07-21T15:01:04Z</published>
+    <updated>2026-07-21T15:01:04Z</updated>
+    <summary>We will deploy updates to production, www.peeringdb.com, without a public beta period in August 2026.</summary>
+  </entry>
+  <entry>
+    <title>Data Quality for Networks</title>
+    <id>https://docs-dev.peeringdb.dk/blog/data_quality_for_networks/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/data_quality_for_networks/"/>
+    <published>2026-07-01T11:42:31Z</published>
+    <updated>2026-07-01T11:42:31Z</updated>
+    <summary>Over 34,000 organizations have data in PeeringDB, so we try to automate improvements to data quality. For instance, we’ve recently automated changes to normalize country and city names for facilities using external geolocation databases. When we improve data quality we make…</summary>
+  </entry>
+  <entry>
+    <title>PeeringDB Update October 2025 – April 2026</title>
+    <id>https://docs-dev.peeringdb.dk/blog/update_oct_2025-apr_2026/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/update_oct_2025-apr_2026/"/>
+    <published>2026-04-30T19:06:13Z</published>
+    <updated>2026-04-30T19:06:13Z</updated>
+    <summary>We publish notes with every release and promote new features and bug fixes on social media. These reports are an opportunity to step back and look at the broad sweep of change.</summary>
+  </entry>
+  <entry>
+    <title>OAuth Isn’t Just for Networks</title>
+    <id>https://docs-dev.peeringdb.dk/blog/oauth_not_just_for_networks/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/oauth_not_just_for_networks/"/>
+    <published>2026-04-16T17:55:33Z</published>
+    <updated>2026-04-16T17:55:33Z</updated>
+    <summary>PeeringDB has provided an OAuth service for a long time. It’s popular with networks who want to authenticate other networks but don’t want them to have to create a new account. Until recently, OAuth applications could only be created by organizations with a network.</summary>
+  </entry>
+  <entry>
+    <title>Engaging with the Product Committee</title>
+    <id>https://docs-dev.peeringdb.dk/blog/engaging_with_the_product_committee/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/engaging_with_the_product_committee/"/>
+    <published>2026-03-19T18:40:06Z</published>
+    <updated>2026-03-19T18:40:06Z</updated>
+    <summary>The Product Committee are the volunteers responsible for making product decisions. We need your input to make good decisions. Many people know this but the number of networks in PeeringDB has almost doubled in just five years. There were almost 17,400 networks listed in…</summary>
+  </entry>
+  <entry>
+    <title>Data Quality and Location Data Normalization</title>
+    <id>https://docs-dev.peeringdb.dk/blog/data_quality_location_data_normalization/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/data_quality_location_data_normalization/"/>
+    <published>2026-03-19T18:40:05Z</published>
+    <updated>2026-03-19T18:40:05Z</updated>
+    <summary>We’ve been incrementally improving the quality of PeeringDB’s location data. Nonetheless, one of the comments in our 2025 user survey was: “the question is moot \- you can't really do anything about the users providing incomplete or stupid data.”</summary>
+  </entry>
+  <entry>
+    <title>Network Type: What's it for? How to use it?</title>
+    <id>https://docs-dev.peeringdb.dk/blog/network_type_what_why_how/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/network_type_what_why_how/"/>
+    <published>2026-03-17T13:15:20Z</published>
+    <updated>2026-03-17T13:15:20Z</updated>
+    <summary>When you add a network to PeeringDB you can choose to describe it with one or more human readable types selected from a list.</summary>
+  </entry>
+  <entry>
+    <title>Recent Operational Issues</title>
+    <id>https://docs-dev.peeringdb.dk/blog/recent_operational_issues/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/recent_operational_issues/"/>
+    <published>2026-03-12T17:28:29Z</published>
+    <updated>2026-03-12T17:28:29Z</updated>
+    <summary>We had some operational issues following the production deployment of 2.76.0. We have a full root cause analysis available but we also want to provide a summary and confirm that the issues are resolved.</summary>
+  </entry>
+  <entry>
+    <title>Website Rate Limiting for Unauthenticated Users</title>
+    <id>https://docs-dev.peeringdb.dk/blog/web_rate_limiting/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/web_rate_limiting/"/>
+    <published>2026-02-26T01:44:36Z</published>
+    <updated>2026-02-26T01:44:36Z</updated>
+    <summary>Unauthenticated website access is now rate limited. Logged in users aren't rate limited.</summary>
+  </entry>
+  <entry>
+    <title>Actively Learning and Testing with Our Tutorial Server</title>
+    <id>https://docs-dev.peeringdb.dk/blog/tutorial_server/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/tutorial_server/"/>
+    <published>2026-02-03T23:13:36Z</published>
+    <updated>2026-02-03T23:13:36Z</updated>
+    <summary>You can test how you use PeeringDB with our tutorial server. It’s there to let you check that the configuration you think is right is, in fact, right before you put it into production.</summary>
+  </entry>
+  <entry>
+    <title>What we Learned From our 2025 User Survey</title>
+    <id>https://docs-dev.peeringdb.dk/blog/2025_user_survey_analysis/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/2025_user_survey_analysis/"/>
+    <published>2025-12-08T20:27:38Z</published>
+    <updated>2025-12-08T20:27:38Z</updated>
+    <summary>We ran a user survey again in 2025. We saw declining participation surveys between 2020 and 2022, so we paused while we made some changes.</summary>
+  </entry>
+  <entry>
+    <title>More ASN Comparisons</title>
+    <id>https://docs-dev.peeringdb.dk/blog/more_asn_comparisons/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/more_asn_comparisons/"/>
+    <published>2025-11-12T17:48:41Z</published>
+    <updated>2025-11-12T17:48:41Z</updated>
+    <summary>We have improved the ASN Comparison feature.</summary>
+  </entry>
+  <entry>
+    <title>PeeringDB's 2025 User Survey</title>
+    <id>https://docs-dev.peeringdb.dk/blog/peeringdb_2025_user_survey/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/peeringdb_2025_user_survey/"/>
+    <published>2025-09-12T20:17:42Z</published>
+    <updated>2025-09-12T20:17:42Z</updated>
+    <summary>We’re running an anonymous user survey until the end of October. It’s been three years since our last survey. We paused for a bit because we were getting the same responses to our questions. We wanted to deploy changes before asking for your time again.</summary>
+  </entry>
+  <entry>
+    <title>September 2025 PeeringDB Product Update</title>
+    <id>https://docs-dev.peeringdb.dk/blog/sep_2025_product_update/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/sep_2025_product_update/"/>
+    <published>2025-08-29T22:17:12Z</published>
+    <updated>2025-08-29T22:17:12Z</updated>
+    <summary>This is our third half yearly update. We publish notes with every release and promote new features and bug fixes on social media. These reports are an opportunity to step back and look at the broad sweep of change.</summary>
+  </entry>
+  <entry>
+    <title>Comparing Networks on PeeringDB’s Website</title>
+    <id>https://docs-dev.peeringdb.dk/blog/asn_comparison/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/asn_comparison/"/>
+    <published>2025-08-04T21:35:36Z</published>
+    <updated>2025-08-04T21:35:36Z</updated>
+    <summary>We have just launched the initial version of a new feature that will allow users to compare facilities on our website. This feature was suggested by users and gives website users the same capabilities that API users have had since PeeringDB v2 launched in 2016.</summary>
+  </entry>
+  <entry>
+    <title>PeeringDB Website Update</title>
+    <id>https://docs-dev.peeringdb.dk/blog/new_website_next_steps/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/new_website_next_steps/"/>
+    <published>2025-06-15T21:37:29Z</published>
+    <updated>2025-06-15T21:37:29Z</updated>
+    <summary>Our website design will be changing. But it's not going to be a radical change. There are two key objectives:</summary>
+  </entry>
+  <entry>
+    <title>April 2025 PeeringDB Product Update</title>
+    <id>https://docs-dev.peeringdb.dk/blog/april_2025_product_update/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/april_2025_product_update/"/>
+    <published>2025-04-24T22:16:19Z</published>
+    <updated>2025-04-24T22:16:19Z</updated>
+    <summary>This is our second half yearly update. We publish notes with every release and promote new features and bug fixes on social media, these reports are an opportunity to step back and look at the broad sweep of change.</summary>
+  </entry>
+  <entry>
+    <title>PeeringDB Will Require MFA and API Keys to Log In</title>
+    <id>https://docs-dev.peeringdb.dk/blog/mfa_mandatory/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/mfa_mandatory/"/>
+    <published>2025-03-13T18:14:14Z</published>
+    <updated>2025-03-13T18:14:14Z</updated>
+    <summary>You must have a second factor to log in to PeeringDB starting on 1 July 2025. If you automate updates using our API, you'll need to use an API Key.</summary>
+  </entry>
+  <entry>
+    <title>Improvements for peeringdb-py</title>
+    <id>https://docs-dev.peeringdb.dk/blog/peeringdb_py_improvements/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/peeringdb_py_improvements/"/>
+    <published>2025-03-01T16:14:21Z</published>
+    <updated>2025-03-01T16:14:21Z</updated>
+    <summary>We just made installing peeringdb-py easier and updated our documentation. Now, you can install it with a single command and you can query it using our API.</summary>
+  </entry>
+  <entry>
+    <title>2025 Starts With Better Search</title>
+    <id>https://docs-dev.peeringdb.dk/blog/2025_better_search/</id>
+    <link href="https://docs-dev.peeringdb.dk/blog/2025_better_search/"/>
+    <published>2025-01-22T18:03:00Z</published>
+    <updated>2025-01-22T18:03:00Z</updated>
+    <summary>We’ve made some improvements to search. Both the results returned and the way they are presented are better. Now, you can have results presented in a simple list or in categories, as before.</summary>
+  </entry>
+</feed>

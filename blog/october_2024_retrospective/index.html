@@ -1,0 +1,331 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/blog/october_2024_retrospective/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>October 2024 PeeringDB Product Update - PeeringDB Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../gov/" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../committee/admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../committee/admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../committee/operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../committee/outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../committee/product/" class="dropdown-item">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../release_notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../howto/query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#october-2024-peeringdb-product-update" class="nav-link">October 2024 PeeringDB Product Update</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#strategy" class="nav-link">Strategy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#people-and-process" class="nav-link">People and process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#last-six-months" class="nav-link">Last six months</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#security" class="nav-link">Security</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#coming-up-and-engagement" class="nav-link">Coming up and engagement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="october-2024-peeringdb-product-update">October 2024 PeeringDB Product Update</h1>
+<p><em>October 4, 2024</em></p>
+<h2 id="strategy">Strategy</h2>
+<p>We reviewed and updated our strategy earlier in the year. We will be publishing overviews of product changes in April and October. We've had a blog for a few years but it’s focused on details. These updates will give a bigger picture.</p>
+<h2 id="people-and-process">People and process</h2>
+<p>Terry Sweetser from APNIC has recently joined the Product Committee (PC). The PC now has members from Africa, Asia Pacific, Europe, and North America. Our committee’s geographic diversity is matched by a diversity in expertise.</p>
+<p>We have updated our processes because our members live around the globe. We are using asynchronous work methods more. And we will focus on planning out sets of related issues to improve PeeringDB more quickly.</p>
+<p>We still encourage users to submit feature requests and bug reports in GitHub. We want to understand how feature developments can help our users. Please tell us whether you'd use a feature and how it would help. You can do this in GitHub, on our mailing list, or when you meet us at industry events.</p>
+<h2 id="last-six-months">Last six months</h2>
+<p>We've been rounding out support for Carrier objects. Organizations can now set user permissions for carriers.</p>
+<p><img alt="Carrier Permissions" src="../images/carrierpermissions.png" /></p>
+<p>We’ve also been working to improve data quality.</p>
+<p>We now enforce state naming. For instance, Queensland in Australia is now always QLD. We also normalize city names in responses but accept popular versions in the search request. So, a search for "fac in München" returns results for facilities within 34 km of Munich, Germany.</p>
+<p><img alt="Normalized place names with dynamic search radius" src="../images/normalized_placenames_with_alternative_name_search.png" /></p>
+<p>The radius search is managed in the backend by the new search. It's different for each city. You can control the radius in Advanced Search, or just look on a map when you download our KMZ.</p>
+<p>The full KMZ download was popular. So, we tidied up the data in the export, added a watermark, so users know that they have PeeringDB data, and integrated KMZ support into other features.</p>
+<p>You can now download a .KMZ file of exchanges or facilities in a city, state, or country. This keeps the file size small, making it easier to integrate it with other data sources.</p>
+<p><img alt="KMZ download from Advanced Search" src="../images/kmz_export_for_advanced_search.png" /></p>
+<p>Once you’ve found the carrier, exchange, facility, or network you are interested in you can now export all their data in structured formats. Previously, this was only available for Advanced Search results.</p>
+<p><img alt="Export structured data from every page" src="../images/export_data_all_pages.png" /></p>
+<p>These data quality, search and extract features are one part of the work we've been doing. We've also put more effort into peeringdb-py, our local cache. We encourage anyone who wants to make heavy use of PeeringDB to run a local cache. There are no usage limits and no latency. </p>
+<p>If you often hit query limits then it could be worth installing. It is resource light, so it can run on a laptop as well as a server. If you sync it once an hour, the changes are normally under 100kb of data.</p>
+<p>We’ve also made improvements behind the scenes. We’ve switched to deploying PeeringDB in containers. This change will reduce the work needed by our volunteer Operations Committee. It will also help us manage costs better by adjusting compute resources dynamically based on load.</p>
+<h2 id="security">Security</h2>
+<p>A user made two security reports. Our Operations team also noticed one issue.</p>
+<p>Based on these reports, we will be making 2FA mandatory for all user accounts. We will also make some minor improvements to other elements of account security.</p>
+<p>We’ll share more details after deploying changes.</p>
+<p>If you notice a security issue, please let us know! <a href="https://docs.peeringdb.com/howto/make-a-security-report/">https://docs.peeringdb.com/howto/make-a-security-report/</a></p>
+<h2 id="coming-up-and-engagement">Coming up and engagement</h2>
+<p>Over the next six months we'd like to deploy improvements to our web design. These won't just make it look better. Once we have them in place we can implement lazy loading, to improve the user experience.</p>
+<p>We can also start to develop some key feature improvements, including saved searches, notifications, and comparison tools.</p>
+<p><img alt="Upcoming user interface example" src="../images/new_admin_ui.png" /></p>
+<p>Your input on how you'd use these and other feature improvements  are welcome. You can create or comment on issues in GitHub. But we'd love to speak with you, too. We actively attend industry events around the world, so look for us there. Or send mail so we can schedule a conversation!</p>
+<p>If you have an idea to improve PeeringDB you can share it on our low traffic <a href="https://docs.peeringdb.com/#mailing-lists">mailing lists</a> or create an issue directly on <a href="https://github.com/peeringdb/peeringdb/issues">GitHub</a>. If you find a data quality issue, please let us know at <a href="mailto:support@peeringdb.com">support@peeringdb.com</a>.</p>
+<hr />
+<p>PeeringDB is a freely available, user-maintained, database of networks, and the go-to location for interconnection data. The database facilitates the global interconnection of networks at Internet Exchange Points (IXPs), data centers, and other interconnection facilities, and is the first stop in making interconnection decisions.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

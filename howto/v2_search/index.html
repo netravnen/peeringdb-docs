@@ -1,0 +1,325 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/howto/v2_search/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>HOWTO: v2 Search - PeeringDB Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../gov/" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../committee/admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../committee/admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../committee/operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../committee/outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../committee/product/" class="dropdown-item">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../release_notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#howto-v2-search" class="nav-link">HOWTO: v2 Search</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#concept" class="nav-link">Concept</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#search-for-a-network" class="nav-link">Search for a network</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#support-for-metro-sizes" class="nav-link">Support for metro sizes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#searching-directly-for-ixs" class="nav-link">Searching directly for IXs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#support-for-campus" class="nav-link">Support for campus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#improving-this-howto" class="nav-link">Improving this HOWTO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="howto-v2-search">HOWTO: v2 Search</h1>
+<p>We are testing v2 search in parallel with our production v1 search tools. We encourage you to test it and <a href="https://forms.gle/TYJgvrCGvyTCiaCY8">give us feedback</a>. Is it faster? Does  it simplify the search process? Does it give you the results you expect? Your input helps us deliver the tools you want.</p>
+<p>When you click one the <a href="https://www.peeringdb.com/search/v2?q=">link for v2 search</a>, you just type your query in the box and hit enter, like normal.</p>
+<h2 id="concept">Concept</h2>
+<p>v2 lets you use some natural language queries in combination with the name for an area. It helps you get the results in fewer searches, ideally just one!</p>
+<h2 id="search-for-a-network">Search for a network</h2>
+<p>Searches for numbers can be interpreted as a search for a location as well as a network. When searching for a network prefixed with 'AS', partial matches show all relevant networks while direct matches take you straight to the network's page.</p>
+<p><img alt="Search for as333" src="../images/search_for_as333.png" /></p>
+<p><em>Fig 1: A search for</em> <code>as333</code> <em>shows results for AS3330 and AS33309</em></p>
+<h2 id="support-for-metro-sizes">Support for metro sizes</h2>
+<p>For many areas it will automatically set an appropriate radius. When a common business area crosses a jurisdictional boundary, the search is based on the common business area and not limited to the named metro area.</p>
+<p><img alt="Search for a fac in New York" src="../images/fac_in_new_york_includes_jersey_city.png" /></p>
+<p><em>Fig 2: A search for</em> <code>fac near new york</code> <em>includes results for facilities in Jersey City, NJ</em></p>
+<p>When you want a different radius, our <a href="https://www.peeringdb.com/advanced_search">Advanced Search</a> tool lets you manually set a specific radius based on any street address. </p>
+<h2 id="searching-directly-for-ixs">Searching directly for IXs</h2>
+<p>v2 search finds exchanges based on the facilities they are in. You don’t need to search for facilities in a metro area and then find the exchanges they host. You can do it in a single search.</p>
+<p><img alt="Search for an ix in Tokyo" src="../images/ix_in_tokyo.png" /></p>
+<p><em>Fig 3: A search for</em> <code>ix in tokyo</code> <em>finds exchanges at facilities we know about in Tokyo</em></p>
+<h2 id="support-for-campus">Support for campus</h2>
+<p>v2 search knows about campus objects – interconnected facilities under common ownership – so you can find campuses for an area as well a getting a full list of facilities.</p>
+<p><img alt="Search for a campus in Amsterdam" src="../images/campus_in_amsterdam.png" /></p>
+<p><em>Fig 4: Searching for a</em> <code>campus in amsterdam</code> <em>shows just three entries</em></p>
+<p><img alt="Search for a fan in Amsterdam" src="../images/fac_in_amsterdam.png" /></p>
+<p><em>Fig 5: Searching for a</em> <code>fac in amsterdam</code> <em>shows many more results</em></p>
+<h2 id="improving-this-howto">Improving this HOWTO</h2>
+<p>Please let us know how we could improve this article. Send a mail to the <a href="mailto:outreachcom@lists.peeringdb.com">Outreach Committee</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

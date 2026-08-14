@@ -1,0 +1,867 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/release_notes/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Release Notes - PeeringDB Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../extra.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../gov/" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../committee/admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../committee/admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../committee/operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../committee/outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="../committee/product/" class="dropdown-item">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../howto/query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#release-notes-and-schedule" class="nav-link">Release Notes and Schedule</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#release-schedule" class="nav-link">Release schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2810" class="nav-link">Release 2.81.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2801" class="nav-link">Release 2.80.1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2800" class="nav-link">Release 2.80.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2790" class="nav-link">Release 2.79.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2780" class="nav-link">Release 2.78.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2770" class="nav-link">Release 2.77.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2764" class="nav-link">Release 2.76.4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2763" class="nav-link">Release 2.76.3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2762" class="nav-link">Release 2.76.2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2761" class="nav-link">Release 2.76.1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2760" class="nav-link">Release 2.76.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-2750" class="nav-link">Release 2.75.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#older-releases" class="nav-link">Older releases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="release-notes-and-schedule">Release Notes and Schedule</h1>
+<p>The release notes list the GitHub issues and a summary of what has changed in PeeringDB software releases.</p>
+<p>Each new release has a one week beta test period on the <a href="https://beta.peeringdb.com/">beta server</a> before it goes live.  The beta and new releases are announced on the <a href="https://lists.peeringdb.com/cgi-bin/mailman/listinfo/pdb-announce">PeeringDB Announce Mailing List</a> and on <a href="https://www.facebook.com/peeringdb">Facebook</a>, <a href="https://www.linkedin.com/company/peeringdb">LinkedIn</a> and <a href="https://x.com/PeeringDB">X</a>.</p>
+<p>Subscribe via <a href="atom.xml">Atom feed</a> to get notified of new releases.</p>
+<h2 id="release-schedule">Release schedule</h2>
+<p>This schedule provides planned dates for PeeringDB’s future releases. We are sharing these dates to help PeeringDB users plan ahead for testing new and improved features in beta. We also want to help volunteer developers know the date on which their code changes are needed for internal testing before beta release.</p>
+<p>We provide a rolling schedule. Dates can change, so if you have a question or request please contact us at: <a href="mailto:support@peeringdb.com">support@peeringdb.com</a>.</p>
+<p>Our releases are generally deployed at around 04:00 UTC.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Release number</strong></th>
+<th><strong>Internal testing</strong></th>
+<th><strong>Beta release</strong></th>
+<th><strong>Production release</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.82.0</td>
+<td>2026-08-04</td>
+<td><a href="https://docs.peeringdb.com/blog/public_beta/">See blog post</a></td>
+<td>2026-08-18</td>
+</tr>
+<tr>
+<td>2.83.0</td>
+<td>2026-09-08</td>
+<td>2026-09-15</td>
+<td>2026-09-22</td>
+</tr>
+<tr>
+<td>2.84.0</td>
+<td>2026-10-06</td>
+<td>2026-10-13</td>
+<td>2026-10-20</td>
+</tr>
+<tr>
+<td>2.85.0</td>
+<td>2026-11-03</td>
+<td>2026-11-10</td>
+<td>2026-11-17</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2810">Release 2.81.0</h2>
+<p>Beta Announcement Date: 15 Jul 2026<br />
+Release Date: 22 Jul 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/2005">#2005 IXF importer adding netixlan entries with no v4 or v6 address.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/2001">#2001 pdb_rir_status script removed live ASN.</a></td>
+<td>Fixes a bug that could remove valid networks.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1996">#1996 Javascript error cleanup.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1984">#1984 Name field allows trailing/consecutive whitespace, enabling duplicate-like entries (PEERINGDB-202606KL4081.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1972">#1972 peeringdb sync --fetch-private' {'available_voltage_services': ['Invalid value: No Power']}.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1971">#1971 Inaccurate Tooltip Text on Campus Edit Page.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/135">peeringdb-py #135 Race condition can caused missed records syncing incremental updates.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/92">peeringdb-py #92 with --fetch-private ixlan is not being cached.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2801">Release 2.80.1</h2>
+<p>Release Date: 24 Jun 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1992">#1992 In page map for advanced facility search is still broken.</a></td>
+<td>Fixes an API Keys to allow the in page map to show the distribution of facilities.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2800">Release 2.80.0</h2>
+<p>Beta Announcement Date: 17 Jun 2026<br />
+Release Date: 24 Jun 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1982">#1982 Searching for entities in Ireland yields entities from the UK as well.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1967">#1967 In page map for advanced facility search is broken.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1894">#1894 Drop postfixing as-set with @IIR.</a></td>
+<td>PeeringDB no longer supports @IRR suffixes for set names.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1943">#1943 Give users more granular control over what to accept from IX-F imports.</a></td>
+<td>Networks can limit what is accepted from IX-F imports.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1949">#1949 Export to file of the “IX-F Import Preview”.</a></td>
+<td>Exchanges can now preview changes their export would make before confirming.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1942">#1942 Remove networks faster when the RIR/NIR reclaims an ASN.</a></td>
+<td>We now remove networks from PeeringDB as soon as we learn that their ASN has been reclaimed.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1831">#1831 Create a feature flag for Auto-IX.</a></td>
+<td>Auto-IX can now be disabled by the AC when a network operator submits an IX form, instead of adding their network to an existing IX.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1948">#1948 Auto-close DeskPro ticket when pending ⟶ deleted status change happens.</a></td>
+<td>As title.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2790">Release 2.79.0</h2>
+<p>Beta Announcement Date: 13 May 2026<br />
+Release Date: 20 May 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1392">#1392 Replace v1 search with v2 search in Release TBD.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1888">#1888 Allow minimum port speed of 50M?.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1928">#1928 API output format significantly differs from spec.</a></td>
+<td>Spec updated to reflect structure in endpoints.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1957">#1957 Unable to open OAuth Details page for OAuth id:671.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1899">#1899 "/data/enum/" JSON data is not being cached by browsers/javascript code .</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1832">#1832 Enhancement of the Auto-IX process.</a></td>
+<td>Auto-IX process now requires an IX-F feed with at least 3 different ASNs.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1897">#1897 IX-F can't actually update IXPFX and IPv6PFX.</a></td>
+<td>Speeds process for IXPs reassigning previously reused IP addresses.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1945">#1945 Duplicate user ⟶ organisation affiliation requests.</a></td>
+<td>Fixes a bug that duplicated support tickets.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1875">#1875 can't delete IXs with IX-F import logs and/or member data from cp.</a></td>
+<td>Superusers can now delete IXs that previously important via IX-F Member Data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2780">Release 2.78.0</h2>
+<p>Beta Announcement Date: 22 April 2026<br />
+Release Date: 29 April 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1810">#1810 Allow disabling either passwords or TOTP for users with passkeys.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1825">#1825 Make "Copy API Query" Feature Available in Advanced Search.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1911">#1911 2FA backup codes are not retrivable.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1918">#1918 Double // cause multiple issues with integrations and peeringdb-py.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1881">#1881 Allow 'docker compose' in addition to 'docker-compose'.</a></td>
+<td>Removes the 'version' in docker-compose.yml and ensures the services restart unless they are stopped, improving upgrades.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/91">peeringdb-py #91 Investigate odd missing relationships during initial syncs.</a></td>
+<td>Fixes bug with syncs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2770">Release 2.77.0</h2>
+<p>Beta Announcement Date: 11 March 2026<br />
+Release Date: 18 March 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1920">#1920 Search not showing current results.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1805">#1805 SLIs for PeeringDB load time.</a></td>
+<td>Add measures for user experience of www.peeringdb.com.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1437">#1437 Investigate performance tuning opportunities.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1884">#1884 Adding manholes as facilities.</a></td>
+<td>Facilities can now indicate when they do not provide power.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1873">#1873 ASN Comparison - allow users to paste in a comma separated list of ASNs to check.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1872">#1872 ASN Comparison - intermittent failure.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1912">#1912 Logging in with a 2FA backup code still require a U2F tap (making them useless).</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1874">#1874 Populate Port Location using information from the IX-F import.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1878">#1878 Errors and warnings with api-schema.</a></td>
+<td>Fix schema to avoid errors.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/128">peeringdb-py #128 django-countries dependency missing.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/129">peeringdb-py #129 auto_pdb_load_data.sh fails with MySQL Error Data too long for column 'logo'.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1918">#1918 Double // cause multiple issues with integrations and peeringdb-py.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/134">peeringdb-py #134 peeringdb.client.Client constructor type is too strict.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/91">peeringdb-py #91 Investigate odd missing relationships during initial syncs.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1891">#1891 Broken AS-SET checking.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1886">#1886 Drop down button incorrectly placed out of page.</a></td>
+<td>Fixes bug as per title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1877">#1877 Auto undelete network.</a></td>
+<td>Automatically undelete networks when an ASN is reassigned and passes the normal checks. This was previously done manually.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/128">peeringdb-py #128 django-countries dependency missing.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/129">peeringdb-py #129 auto_pdb_load_data.sh fails with MySQL Error Data too long for column 'logo'.</a></td>
+<td>As title.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2764">Release 2.76.4</h2>
+<p>Release Date: 2 March 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/pull/1916">#1916 remove empty return-path header.</a></td>
+<td>Removed the erroneous <code>Return-Path: &lt;&gt;</code> header from outbound emails.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2763">Release 2.76.3</h2>
+<p>Release Date: 28 February 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/pull/1910">#1910 OAuth broken with (at least) U2F 2FA keys.</a></td>
+<td>As title.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2762">Release 2.76.2</h2>
+<p>Release Date: 26 February 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/pull/1909">#1909 skip healthcheck for web page ratelimiting.</a></td>
+<td>As title.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2761">Release 2.76.1</h2>
+<p>Release Date: 26 February 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/pull/1905">#1905 Support 202601 Fixes.</a></td>
+<td>Fix issue where redis unavailable during negative cache checks could lead to cascading failures.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2760">Release 2.76.0</h2>
+<p>Beta Announcement Date: 18 February 2026<br />
+Release Date: 25 February 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1849">#1849 Add rate limiting for unauthenticated web pages queries.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1846">#1846 Page load time dramatically goes up when limiting queries.</a></td>
+<td>Improves page load time for complex queries.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1844">#1844 Exclude AC members from rate limiting.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1814">#1814 Improve Passkey or Security Key login flow.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1889">#1889 Security key setup fails on some conditions.</a></td>
+<td>Fixes a bug where adding a security key before TOTP failed.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1830">#1830 Remove "Require users in your organization to enable 2FA." radio button from Org &gt; Users tab.</a></td>
+<td>Clean up web UI now MFA is mandatory.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1855">#1855 No way to check if an API key has been created read-only or not.</a></td>
+<td>Make API Key  permissions visible.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1870">#1870 Ctl/local/setup.sh: input data doesn't fit schema limits.</a></td>
+<td>Fixes bug that stopped installation of self-hosted instances.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb-py/issues/133">peeringdb-py #133 Field Mismatch Between Cache and Official API.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1876">#1876 UI Inconsistency in Filter Selection (ASN Connectivity Search).</a></td>
+<td>Web UI improvements for ASN Conectivity searches.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1862">#1862 Cannot upload .png logo.</a></td>
+<td>Fixes a bug for logos.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1834">#1834 Reverse action order for export interstitial and add color to button.</a></td>
+<td>Improve web UI grammar for action buttons.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1838">#1838 Affiliation requires ASN, but text on page suggests it isn't required.</a></td>
+<td>Fixes text to align with policy.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1779">#1779 New web UI is missing "Port Location" field under "Public Peering Exchange Points".</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1871">#1871 facmerge tool broken as of release 2.68.0.</a></td>
+<td>Fixes the facmerge tool.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1499">#1499 Stop Ticket Opening Post Object Creation (anti-automat).</a></td>
+<td>As title.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="release-2750">Release 2.75.0</h2>
+<p>Beta Announcement Date: 22 January 2026<br />
+Release Date: 28 January 2026</p>
+<table>
+<thead>
+<tr>
+<th><strong>GitHub issue</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1822">#1822 Integration Testing with Live Elasticsearch.</a></td>
+<td>Improvements to testing for search.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1850">#1850 Search for network name doesn't work if it contains only digits.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1833">#1833 Search for ix in Vietnam gives bad results #1833.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1787">#1787 Search fails to identify ALL IX's in fast search option.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1852">#1852 Network creation only tests primary e-mail address against IRR records (Issue #1852).</a></td>
+<td>Adds checks against all addresses when creating a new network.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1821">#1821 Remove default country setting from "Add Exchange" form.</a></td>
+<td>As title, used to default to USA.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1605">#1605 Unable to save Organization API key permissions for Carrier objects.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1845">#1845 Undeleting a network when the parent org is still deleted results in unhelpful 500 error message.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1847">#1847 Carrier is missing numbers in overview if there is none.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1640">#1640 Add carrier_count to fac object.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1821">#1821 Remove default country setting from "Add Exchange" form.</a></td>
+<td>As title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/peeringdb/peeringdb/issues/1851">#1851 tutorial webserver is broken.</a></td>
+<td>Fixes for remaining tutorial server issues.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="older-releases">Older releases</h2>
+<ul>
+<li><a href="/release_notes/release_notes_2025/">2025 Release Notes</a></li>
+<li><a href="/release_notes/release_notes_2024/">2024 Release Notes</a></li>
+<li><a href="/release_notes/release_notes_2023/">2023 Release Notes</a></li>
+<li><a href="/release_notes/release_notes_2022/">2022 Release Notes</a></li>
+<li><a href="/release_notes/release_notes_2021/">2021 Release Notes</a></li>
+<li><a href="/release_notes/release_notes_2020/">2020 Release Notes</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,505 @@
+<!-- Full copy of mkdocs 1.4.3's built-in themes/mkdocs/base.html (pinned version,
+     see pyproject.toml), plus one insertion: the fork-preview banner immediately
+     before the navbar div. There's no block wrapping that div in the upstream
+     template, so overriding just main.html can't reach above the nav bar -- this
+     whole file had to be duplicated. If mkdocs is ever upgraded, re-diff against
+     the new packaged base.html and re-apply this insertion. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.peeringdb.com/committee/product/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Product Committee - PeeringDB Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-14LRNCMV44"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-14LRNCMV44');
+        </script>
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Blog" href="../../blog/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="PeeringDB Release Notes" href="../../release_notes/atom.xml">
+
+    </head>
+
+    <body class="has-fork-banner">
+        <div class="fork-banner">
+          <span class="fork-banner-text">
+            Fork preview &mdash; repo:
+            <a href="https://github.com/netravnen/peeringdb-docs" target="_blank" rel="noopener">netravnen/peeringdb-docs</a>
+            &middot; viewing:
+            <a href="https://docs-dev.peeringdb.dk" target="_blank" rel="noopener">docs-dev.peeringdb.dk</a>
+            &mdash; Production:
+            <a href="https://docs.peeringdb.com/" target="_blank" rel="noopener">docs.peeringdb.com</a>
+            &middot;
+            <a href="https://github.com/peeringdb/docs" target="_blank" rel="noopener">peeringdb/docs</a>
+          </span>
+        </div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PeeringDB Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../gov/" class="nav-link">Governance</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Committees & Task Forces <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Admin Committee</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../admin/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../admin/deskpro_snippets/" class="dropdown-item">Deskpro Snippets</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../operations/" class="dropdown-item">Operations Committee</a>
+</li>
+                                    
+<li>
+    <a href="../outreach/" class="dropdown-item">Outreach Committee</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Product Committee</a>
+</li>
+                                    
+<li>
+    <a href="../../taskforce/dataownership/" class="dropdown-item">Data Ownership Task Force</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technical <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../release_notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../../api_specs/" class="dropdown-item">API Specs</a>
+</li>
+                                    
+<li>
+    <a href="../../ix-f-json-import-rules/" class="dropdown-item">IX-F JSON</a>
+</li>
+                                    
+<li>
+    <a href="../../oauth/" class="dropdown-item">OAuth</a>
+</li>
+                                    
+<li>
+    <a href="../../translation/" class="dropdown-item">Translations</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/peeringdb/peeringdb/tree/master/docs" class="dropdown-item">Developer Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HOWTOs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../howtos/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../howto/query_the_api/" class="dropdown-item">Query the API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#peeringdb-product-committee" class="nav-link">PeeringDB Product Committee</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#peeringdb-product-committee-charter" class="nav-link">PeeringDB Product Committee Charter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#decision-making-process-and-workflow" class="nav-link">Decision making process and workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#meeting-notes" class="nav-link">Meeting notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#members" class="nav-link">Members</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="peeringdb-product-committee">PeeringDB Product Committee</h1>
+<ul>
+<li>Purpose is to study and recommend feature needs.</li>
+<li>Interested in volunteering? Contact <a href="mailto:productcom@lists.peeringdb.com">productcom@lists.peeringdb.com</a>.</li>
+</ul>
+<h2 id="peeringdb-product-committee-charter">PeeringDB Product Committee Charter</h2>
+<p><strong><em> Approved by Board July 7th, 2017 </em></strong></p>
+<h4 id="scope">Scope</h4>
+<p>The PeeringDB Product Committee (PC) is charged with steering the future product development and running the market outreach efforts to continuously improve the value that PeeringDB delivers to the networks registered with PeeringDB, and the broader community.</p>
+<h4 id="out-of-scope">Out of scope</h4>
+<ul>
+<li>The PC does not drive PeeringDB improvements related to the administrative interfaces &amp; functions used by the PeeringDB Admin Committee.</li>
+<li>The PC does not consider PeeringDB improvements related to the server, storage, hosting or network infrastructure.</li>
+</ul>
+<h4 id="deliverables">Deliverables</h4>
+<ul>
+<li>Gather inputs from stakeholders regarding the evolution of PeeringDB in terms of product features and overall long term objectives.</li>
+<li>Formulate the long term objectives and validate them with the PeeringDB Board and the members of the PeeringDB Governance mailing list.</li>
+<li>Document and maintain workflow process to handle requests and issues.</li>
+<li>Maintain the product roadmap and feature request backlog and makes them publicly accessible. </li>
+<li>Create and maintain PeeringDB product documentation and presentation materials.</li>
+<li>Develop market outreach and evangelization to increase the uptake of PeeringDB use and improve data quality.</li>
+<li>Propose new features or enhancements based on the long term objectives and validates significant product evolutions with key stakeholders.</li>
+</ul>
+<h4 id="collaboration">Collaboration</h4>
+<p>The PC shall work with other PeeringDB committees to ensure an equitable division of development resources in recognition of the volunteer efforts that are ensuring the daily operations.</p>
+<h4 id="participation">Participation</h4>
+<p>The PeeringDB Product Committee members serve a 2 years renewable term, potential volunteers may submit their candidacy to the PeeringDB Board. The product committee will select their own Chair and Vice Chair by simple majority vote. The Board may add or remove members at any time it deems necessary.</p>
+<h4 id="communication">Communication</h4>
+<ul>
+<li>Questions and suggestions for the Product Committee can be sent to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#111;&#100;&#117;&#99;&#116;&#99;&#111;&#109;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#112;&#101;&#101;&#114;&#105;&#110;&#103;&#100;&#98;&#46;&#99;&#111;&#109;">&#112;&#114;&#111;&#100;&#117;&#99;&#116;&#99;&#111;&#109;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#112;&#101;&#101;&#114;&#105;&#110;&#103;&#100;&#98;&#46;&#99;&#111;&#109;</a></li>
+<li>The committee will use a range of mechanisms for communication and community input gathering efforts, including the PeeringDB Governance Mailinglist <a href="http://lists.peeringdb.com/cgi-bin/mailman/listinfo/pdb-gov">pdb-gov@lists.peeringdb.com</a></li>
+<li>Decisions, including their rationale, will be documented in <a href="https://github.com/peeringdb/peeringdb/issues">GitHub issues</a></li>
+<li>All issues and the product roadmap and feature backlog can be found at in <a href="https://github.com/peeringdb/peeringdb/issues">GitHub issues</a></li>
+</ul>
+<h4 id="decision-policy">Decision policy</h4>
+<p>Product Committee members will decide by simple majority vote on contested issues called by the Product Committee Chair.</p>
+<p><strong><em> PeeringDB Common Committee Charter Provisions: </em></strong></p>
+<h4 id="dispute-resolution">Dispute resolution</h4>
+<p>If the committee handles an issue in a manner in which a user believes that their view has not been adequately considered, their first action should be to raise the concern with the Committee Chair for further consideration. If the dispute is between the user and the Committee Chair then the issue may alternatively be raised with the Committee Vice Chair. If the dispute cannot be resolved the matter may be brought forward to the PeeringDB Board.  The decision by the PeeringDB Board shall be final.</p>
+<h4 id="committee-chair-and-vice-chair">Committee Chair and Vice Chair</h4>
+<p>The committee elects their Chair and Vice Chair from among their members, subject to PeeringDB Board approval.  The Chair and Vice Chair work as a team and distribute the workload between themselves as they deem appropriate. Decisions should be unanimous, however the final decision on any matter is with the Chair. In case the Chair becomes unavailable, the Vice Chair may assume the position of Acting Chair. If the Chair or Vice Chair become permanently unavailable, replacement(s) are elected from the remaining committee members, subject to PeeringDB Board approval.</p>
+<h2 id="decision-making-process-and-workflow">Decision making process and workflow</h2>
+<p>Product Committee members are responsible for driving the development of PeeringDB. To do this, GitHub issues are used to track proposed and in progress work. Product Committee members play two roles in driving forward work: </p>
+<p>1) As a shepherd - responsible for driving consensus for a given issue<br />
+2) As a stakeholder - voting on a consensus that has been reached</p>
+<p>Each Product Committee member will choose issues to shepherd to a decision. They will indicate responsibility for this task by assigning the issue to themselves and placing it in the Decide queue.</p>
+<p>To decide whether we act on a given issue that has been reported, a stakeholder group will be formed. This group will consist of Product Committee members, who are responsible for representing the users of PeeringDB. A stakeholder group on a given issue must consist of at least three Product Committee members, including the shepherding member. </p>
+<p>Any Product Committee member can be a stakeholder in the decision on an issue. They become a stakeholder on a given issue by either commenting on the issue on GitHub or participating in discussion of the issue on the Product Committee Mailing list. It is up to the shepherding member to help reach a <strong>unanimous consensus</strong> within the stakeholder group on what should be done with the issue - including <strong>not</strong> acting on it. If and only if there are opposing views on how to proceed, and unanimous consensus cannot be reached by the stakeholder committee members, decisions fall to the entire Product Committee (see below).</p>
+<p>The final proposal of how to resolve each issue, along with votes from stakeholders must be documented in the GitHub issue to be considered to have reached consensus. Product Committee members must document any offline discussion in the GitHub issue to ensure transparency of the discussion process.</p>
+<p>Issues in the Decide queue are regularly reviewed by the Product Committee to make sure the most impactful issues are being moved along to resolution. All issues in the Decide queue will be reviewed in the monthly Product Committee call to ensure stakeholders have reached consensus and to give members who have not participated in the issue an opportunity to participate.</p>
+<p>After an issue with consensus has been reviewed, Product Committee members who disagree with the proposal have five days after the monthly Product Committee call to vote against the proposed solution, otherwise the issue will move to the backlog.</p>
+<p>For any issues where consensus cannot be reached, an issue may move forward only if a quorum of 50% or more of the Product Committee has no more than 25% of the quorum in opposition to the issue.</p>
+<h2 id="meeting-notes">Meeting notes</h2>
+<h4 id="2026">2026</h4>
+<ul>
+<li><a href="notes/2026-08-06_Product_Committee_Notes.pdf">August 6th, 2026: Meeting Notes</a></li>
+<li><a href="notes/2026-07-02_Product_Committee_Notes.pdf">July 2nd, 2026: Meeting Notes</a></li>
+<li>June 4th, 2026: Deferred Meeting</li>
+<li><a href="notes/2026-05-07_Product_Committee_Notes.pdf">May 7th, 2026: Meeting Notes</a></li>
+<li><a href="notes/2026-04-02_Product_Committee_Notes.pdf">April 2nd, 2026: Meeting Notes</a></li>
+<li><a href="notes/2026-03-05_Product_Committee_Notes.pdf">March 5th, 2026: Meeting Notes</a></li>
+<li><a href="notes/2026-02-05_Product_Committee_Notes.pdf">February 5th, 2026: Meeting Notes</a></li>
+<li><a href="notes/2026-01-15_Product_Committee_Notes.pdf">January 15th, 2026: Meeting Notes</a></li>
+</ul>
+<h4 id="2025">2025</h4>
+<ul>
+<li><a href="notes/2025-12-04_Product_Committee_Notes.pdf">December 4th, 2025: Deferred Meeting Agenda</a></li>
+<li><a href="notes/2025-11-06_Product_Committee_Notes.pdf">November 6th, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-10-02_Product_Committee_Notes.pdf">October 2nd, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-09-04_Product_Committee_Notes.pdf">September 4th, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-08-07_Product_Committee_Notes.pdf">August 7th, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-07-03_Product_Committee_Notes.pdf">July 3rd, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-06-05_Product_Committee_Notes.pdf">June 5th, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-05-01_Product_Committee_Notes.pdf">May 1st, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-04-03_Product_Committee_Notes.pdf">April 3rd, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-03-06_Product_Committee_Notes.pdf">March 6th, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-02-06_Product_Committee_Notes.pdf">February 6th, 2025: Meeting Notes</a></li>
+<li><a href="notes/2025-01-02_Product_Committee_Notes.pdf">January 2nd, 2025: Meeting Notes</a></li>
+</ul>
+<h4 id="2024">2024</h4>
+<ul>
+<li><a href="notes/2024-12-05_Product_Committee_Notes.pdf">December 5th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-11-07_Product_Committee_Notes.pdf">November 7th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-10-03_Product_Committee_Notes.pdf">October 3rd, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-09-05_Product_Committee_Notes.pdf">September 5th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-08-01_Product_Committee_Notes.pdf">August 1st, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-07-11_Product_Committee_Notes.pdf">July 11th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-06-06_Product_Committee_Notes.pdf">June 6th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-05-02_Product_Committee_Notes.pdf">May 2nd, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-04-04_Product_Committee_Notes.pdf">April 4th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-03-14_Product_Committee_Notes.pdf">March 14th, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-02-01_Product_Committee_Notes.pdf">February 1st, 2024: Meeting Notes</a></li>
+<li><a href="notes/2024-01-04_Product_Committee_Notes.pdf">January 4th, 2024: Meeting Notes</a></li>
+</ul>
+<h4 id="2023">2023</h4>
+<ul>
+<li><a href="notes/2023-12-07_Product_Committee_Notes.pdf">December 7th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-11-02_Product_Committee_Notes.pdf">November 2nd, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-10-05_Product_Committee_Notes.pdf">October 5th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-09-07_Product_Committee_Notes.pdf">September 7th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-08-03_Product_Committee_Notes.pdf">August 3rd, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-07-06_Product_Committee_Notes.pdf">July 6th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-06-01_Product_Committee_Notes.pdf">June 1st, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-05-04_Product_Committee_Notes.pdf">May 4th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-04-06_Product_Committee_Notes.pdf">April 6th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-03-02_Product_Committee_Notes.pdf">March 2nd, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-02-14_Product_Committee_Notes.pdf">February 14th, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-02-02_Product_Committee_Notes.pdf">February 2nd, 2023: Meeting Notes</a></li>
+<li><a href="notes/2023-01-05_Product_Committee_Notes.pdf">January 5th, 2023: Meeting Notes</a></li>
+</ul>
+<h4 id="2022">2022</h4>
+<ul>
+<li>No formal meeting in December 2022</li>
+<li><a href="notes/2022-11-03_Product_Committee_Notes.pdf">November 3rd, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-10-17_Product_Committee_Notes.pdf">October 17th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-10-06_Product_Committee_Notes.pdf">October 6th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-09-08_Product_Committee_Notes.pdf">September 8th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-08-04_Product_Committee_Notes.pdf">August 4th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-07-07_Product_Committee_Notes.pdf">July 7th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-06-02_Product_Committee_Notes.pdf">June 2nd, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-05-05_Product_Committee_Notes.pdf">May 5th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-04-07_Product_Committee_Notes.pdf">April 7th, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-03-03_Product_Committee_Notes.pdf">March 3rd, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-02-03_Product_Committee_Notes.pdf">February 3rd, 2022: Meeting Notes</a></li>
+<li><a href="notes/2022-01-06_Product_Committee_Notes.pdf">January 6th, 2022: Meeting Notes</a></li>
+</ul>
+<h4 id="2021">2021</h4>
+<ul>
+<li><a href="notes/2021-12-02_Product_Committee_Notes.pdf">December 2nd, 2021: Meeting Notes</a></li>
+<li>No formal meeting in November 2021</li>
+<li><a href="notes/2021-10-07_Product_Committee_Notes.pdf">October 7th, 2021: Meeting Notes</a></li>
+<li>No formal meeting in September 2021</li>
+<li>No formal meeting in August 2021</li>
+<li>No formal meeting in July 2021</li>
+<li>No formal meeting in June 2021</li>
+<li><a href="notes/2021-05-06_Product_Committee_Notes.pdf">May 6th, 2021: Meeting Notes</a></li>
+<li><a href="notes/2021-04-01_Product_Committee_Notes.pdf">April 1st, 2021: Meeting Notes</a></li>
+<li><a href="notes/2021-03-11_Product_Committee_Notes.pdf">March 11th, 2021: Meeting Notes</a></li>
+<li><a href="notes/2021-02-04_Product_Committee_Notes.pdf">February 4th, 2021: Meeting Notes</a></li>
+<li><a href="notes/2021-01-07_Product_Committee_Notes.pdf">January 7th, 2021: Meeting Notes</a></li>
+</ul>
+<h4 id="2020">2020</h4>
+<ul>
+<li><a href="notes/2020-12-03_Product_Committee_Notes.pdf">December 3rd, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-11-05_Product_Committee_Notes.pdf">November 5th, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-10-01_Product_Committee_Notes.pdf">October 1st, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-09-03_Product_Committee_Notes.pdf">September 3rd, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-08-06_Product_Committee_Notes.pdf">August 6th, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-07-02_Product_Committee_Notes.pdf">July 2nd, 2020: Meeting Notes</a> </li>
+<li><a href="notes/2020-06-04_Product_Committee_Notes.pdf">June 4th, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-05-07_Product_Committee_Notes.pdf">May 7th, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-04-02_Product_Committee_Notes.pdf">April 2nd, 2020: Meeting Notes</a></li>
+<li>No formal meeting in March 2020</li>
+<li><a href="notes/2020-02-06_Product_Committee_Notes.pdf">February 6th, 2020: Meeting Notes</a></li>
+<li><a href="notes/2020-01-09_Product_Committee_Notes.pdf">January 9th, 2020: Meeting Notes</a></li>
+</ul>
+<h4 id="2019">2019</h4>
+<ul>
+<li>No formal meeting in December 2019</li>
+<li><a href="notes/2019-11-14_Product_Committee_Notes.pdf">November 14th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-10-03_Product_Committee_Notes.pdf">October 3rd, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-09-05_Product_Committee_Notes.pdf">September 5th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-08-08_Product_Committee_Notes.pdf">August 8th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-07-11_Product_Committee_Notes.pdf">July 11th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-06-07_Product_Committee_Notes.pdf">June 7th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-05-02_Product_Committee_Notes.pdf">May 2nd, 2019: Meeting Notes</a></li>
+<li>No formal meeting in April 2019</li>
+<li><a href="notes/2019-03-07_Product_Committee_Notes.pdf">March 7th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-02-07_Product_Committee_Notes.pdf">February 7th, 2019: Meeting Notes</a></li>
+<li><a href="notes/2019-01-03_Product_Committee_Notes.pdf">January 3rd, 2019: Meeting Notes</a></li>
+</ul>
+<h4 id="2018">2018</h4>
+<ul>
+<li><a href="notes/2018-12-06_Product_Committee_Notes.pdf">December 6th, 2018: Meeting Notes</a></li>
+<li><a href="notes/2018-11-01_Product_Committee_Notes.pdf">November 1st, 2018: Meeting Notes</a></li>
+<li><a href="notes/2018-10-04_Product_Committee_Notes.pdf">October 4th, 2018: Meeting Notes</a></li>
+<li><a href="notes/2018-09-06_Product_Committee_Notes.pdf">September 6th, 2018: Meeting Notes</a></li>
+<li>No formal meeting in August 2018</li>
+<li><a href="notes/2018-07-05_Product_Committee_Notes.pdf">July 5th, 2018: Meeting Notes</a></li>
+<li><a href="notes/2018-06-07_Product_Committee_Notes.pdf">June 7th, 2018: Meeting Notes</a></li>
+<li>No formal meeting in May 2018</li>
+<li><a href="notes/2018-04-05_Product_Committee_Notes.pdf">April 5th, 2018: Meeting Notes</a></li>
+<li><a href="notes/2018-03-14_Product_Committee_Notes.pdf">March 14th, 2018: Meeting Notes</a></li>
+<li>No formal meeting in February 2018</li>
+<li><a href="notes/2018-01-04_Product_Committee_Notes.pdf">January 4th, 2018: Meeting Notes</a></li>
+</ul>
+<h4 id="2017">2017</h4>
+<ul>
+<li><a href="notes/2017-12-07_Product_Committee_Notes.pdf">December 7th, 2017: Meeting Notes</a></li>
+<li>No formal meeting in November 2017</li>
+<li><a href="notes/2017-10-12_Product_Committee_Notes.pdf">October 12th, 2017: Meeting Notes</a></li>
+<li>No formal meeting in September 2017</li>
+<li><a href="notes/2017-08-03_Product_Committee_Notes.pdf">August 3rd, 2017: Meeting Notes</a></li>
+<li><a href="notes/2017-07-06_Product_Committee_Notes.pdf">July 6th, 2017: Meeting Notes</a></li>
+<li><a href="notes/2017-06-01_Product_Committee_Notes.pdf">June 1st, 2017: Meeting Notes</a></li>
+<li>No formal meeting in May 2017</li>
+<li><a href="notes/2017-04-13_Product_Committee_Notes.pdf">April 13th, 2017: Meeting Notes</a></li>
+<li><a href="notes/2017-03-21_Product_Committee_Notes.pdf">March 21st, 2017: Meeting Notes</a></li>
+</ul>
+<h2 id="members">Members</h2>
+<ul>
+<li>Jeff Bartig</li>
+<li>Yan Berthier</li>
+<li>Jack Carrozzo - Chair</li>
+<li>Maximiliano Estudies</li>
+<li>Matt Griswold - Vice Chair</li>
+<li>Peter Helmenstine</li>
+<li>Paul Hoogsteder</li>
+<li>Stephen McManus</li>
+<li>Arnold Nipper</li>
+<li>Terry Sweetser</li>
+<li>Leo Vegoda - Product Manager</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.peeringdb.com/'><img align=left style='height:69px' src='/img/./pdb-logo-coloured.svg' alt='PeeringDB Logo'></a>
+ </tr></table>
+ <table border="0" cellpadding ="0" cellspacing ="0"><tr>
+ <a target='_blank' href='https://www.facebook.com/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-facebook.png' alt='Facebook Logo'></a>
+ <a target='_blank' href='https://github.com/peeringdb/peeringdb/issues'><img align=left style='height:50px; padding:5px' src='/img/social-github.png' alt='GitHub Logo'></a>
+ <a target='_blank' href='https://www.linkedin.com/company/peeringdb'><img align=left style='height:50px; padding:5px' src='/img/social-linkedin.png' alt='LinkedIn Logo'></a>
+ <a target='_blank' href='https://twitter.com/PeeringDB'><img align=left style='height:50px; padding:5px' src='/img/social-x.png' alt='X Logo'></a>
+ <a target='_blank' href='https://www.youtube.com/channel/UCOrYWUg-dbL9UTFV_Lry6Wg'><img align=left style='height:50px; padding:5px' src='/img/social-youtube.png' alt='YouTube Logo'></a>
+ </tr></table>
+
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
